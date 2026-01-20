@@ -1,0 +1,59 @@
+@use "../variables" as *;
+
+.page-home {
+    max-width: 900px;
+    margin: 0 auto; // Wyśrodkowanie kontenera na stronie
+    padding: 3rem 1rem;
+    text-align: center;
+
+    // Stylowanie nagłówka
+    h2 {
+        font-size: 2.5rem;
+        color: #333; // Lub użyj zmiennej $text-color
+        margin-bottom: 0.5rem;
+
+        span {
+            color: rgb(255, 123, 0); // Np. pomarańczowy dla wyróżnienia
+        }
+    }
+
+    // Stylowanie tekstu powitalnego
+    .intro-text {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    // Stylowanie zdjęcia (jeśli je dodałaś)
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px; // Zaokrąglone rogi
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); // Cień pod zdjęciem
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02); // Lekkie powiększenie po najechaniu
+        }
+    }
+
+    // Przycisk "Dołącz do nas" (opcjonalnie)
+    .cta-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 12px 30px;
+        background-color: rgb(255, 123, 0);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken(rgb(255, 123, 0), 10%);
+            cursor: pointer;
+        }
+    }
+}
