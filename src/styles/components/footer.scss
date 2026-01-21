@@ -1,8 +1,66 @@
+@use '../variables' as *;
+
 .footer {
-    background-color: #222;
-    color: #888;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-    border-top: 3px solid #ff9900; // Ozdobny pasek
+    background-color: $black;
+    color: rgba($white, 0.8);
+    padding: 80px 0 80px;
+    margin-top: auto;
+
+    &__container {
+        @include container;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: $font-heading;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: $pure-white;
+        margin-bottom: 24px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
+        &-icon {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__brand p {
+        color: $color-second;
+        font-size: 0.9rem;
+    }
+
+    &__col {
+        h4 {
+            color: $pure-white;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        a {
+            transition: $transition-base;
+
+            &:hover {
+                color: $color-first;
+            }
+        }
+    }
 }

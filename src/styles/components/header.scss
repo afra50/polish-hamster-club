@@ -1,31 +1,67 @@
-// Tutaj tylko style dla nagłówka
+@use '../variables' as *;
+
 .header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 2rem;
+    background-color: $white;
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba($color-second, 0.1);
 
-    nav {
+    &__container {
+        @include container;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+    }
 
-        ul {
-            list-style: none;
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &-icon {
+            font-size: 2rem;
+        }
+
+        &-text {
             display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
+            flex-direction: column;
+            font-family: $font-heading;
+            font-weight: 700;
+            line-height: 1;
+            font-size: 1.1rem;
+            color: $black;
 
-            a {
-                color: white;
-                text-decoration: none;
-                font-weight: bold;
-                transition: color 0.3s;
-
-                &:hover {
-                    color: #ff9900; // Kolor po najechaniu
-                }
+            span:first-child {
+                color: $color-first;
             }
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        gap: 32px;
+
+        a {
+            font-family: $font-body;
+            font-weight: 500;
+            font-size: 1rem;
+            color: $black;
+            transition: $transition-base;
+
+            &:hover,
+            &.active {
+                color: $color-first;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+
+        &__nav,
+        &__cta {
+            display: none; // Wymagałoby implementacji menu mobilnego
         }
     }
 }

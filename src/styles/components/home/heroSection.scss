@@ -1,0 +1,129 @@
+@use '../../variables' as *;
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    background-color: $pure-white; // Tło pod spodem
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    // Główny kontener FLEX (nie grid)
+    &__container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            padding-bottom: 0;
+        }
+    }
+
+    // --- LEWA STRONA (ZDJĘCIE) ---
+    &__image-box {
+        width: 60%; // Zdjęcie jest szerokie
+        height: 700px; // Wysokie zdjęcie
+        position: relative;
+        z-index: 1;
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            height: 450px;
+
+            .hero-img {
+                border-radius: 0;
+            }
+        }
+    }
+
+    // --- PRAWA STRONA (KONTENER NA KARTĘ) ---
+    &__content-box {
+        width: 30%; // Reszta szerokości
+        position: relative;
+        z-index: 5; // Musi być wyżej niż zdjęcie
+        padding-right: 40px; // Odstęp od prawej krawędzi ekranu
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            padding: 0 24px;
+            margin-top: -80px; // Na mobilu wciągamy kartę do góry na zdjęcie
+        }
+    }
+
+    // --- KARTA Z TEKSTEM (OVERLAP) ---
+    .hero-card {
+        background-color: $white;
+        padding: 60px 50px;
+        border-radius: $border-radius;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+
+        // KLUCZOWE: Ujemny margines przesuwa kartę w lewo NA ZDJĘCIE
+        margin-left: -120px;
+
+        @media (max-width: 1024px) {
+            margin-left: 0; // Reset na mobilu
+            width: 100%;
+            text-align: center;
+        }
+
+        .accent-surtitle {
+            display: block;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: $black;
+            font-size: 0.85rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: $black;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: $color-second;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+    }
+
+    // --- FALA NA DOLE ---
+    .hero-wave {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        line-height: 0;
+        z-index: 3; // Nad zdjęciem, ale pod kartą (jeśli by się stykały)
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 180px; // Wysoka fala
+
+            path {
+                fill: $white;
+            }
+        }
+    }
+}

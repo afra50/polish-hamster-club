@@ -7,15 +7,73 @@
   box-sizing: border-box;
 }
 
-// h1,
-// h2,
-// h3,
-// h4 {
-// 	font-family: $font-heading;
-// }
+body {
+  font-family: $font-body;
+  background-color: $white;
+  color: $black;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-// p,
-// a,
-// li {
-// 	font-family: $font-body;
-// }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  color: $black;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p {
+  color: $color-second;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Klasy pomocnicze do przycisków
+.btn {
+  @include btn-base;
+
+  &--primary {
+    background-color: $color-first;
+    color: $pure-white;
+
+    &:hover {
+      background-color: darken($color-first, 5%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba($color-first, 0.2);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: $color-first;
+    color: $color-first;
+
+    &:hover {
+      background-color: $color-first;
+      color: $pure-white;
+    }
+  }
+
+  &--text {
+    padding: 12px 0;
+    background-color: transparent;
+    color: $black;
+    border-radius: 0;
+
+    &:hover {
+      color: $color-first;
+    }
+  }
+}

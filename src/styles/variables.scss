@@ -1,7 +1,38 @@
 $white: #f7f8f9;
+$pure-white: #ffffff;
 $black: #1f1f1f;
 $color-first: #258183;
 $color-second: #6d717a;
 
 $font-heading: "Cormorant", serif;
 $font-body: "Source Sans 3", system-ui, sans-serif;
+
+// --- POMOCNICZE ZMIENNE ---
+$border-radius: 15px;
+$border-radius-large: 30px;
+$container-width: 1240px;
+$shadow-soft: 0 20px 40px rgba($black, 0.06);
+$transition-base: all 0.3s ease;
+
+// --- MIXINY ---
+@mixin container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+// Mixin do przycisków
+@mixin btn-base {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 32px;
+    border-radius: 30px; // Bardziej zaokrąglone
+    font-family: $font-body;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition-base;
+    border: 2px solid transparent;
+    font-size: 1rem;
+}
