@@ -15,10 +15,15 @@
         justify-content: space-between;
     }
 
+    // --- LOGO ---
     &__logo {
         display: flex;
         align-items: center;
         gap: 12px;
+        text-decoration: none;
+        // Ważne: Logo musi być na wierzchu, żeby kliknąć je przy otwartym menu (opcjonalne)
+        position: relative;
+        z-index: 102;
 
         &-icon {
             font-size: 2rem;
@@ -39,9 +44,64 @@
         }
     }
 
+    // --- BURGER BUTTON (MOBILE ONLY) ---
+    &__burger {
+        display: none; // Domyślnie ukryty na desktopie
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $black;
+        z-index: 102; // Musi być nad menu mobilnym
+        padding: 5px;
+
+        @media (max-width: 900px) {
+            display: block; // Pokazujemy na mobile
+        }
+    }
+
+    // --- WRAPPER DLA NAV I CTA ---
+    &__menu-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+
+        // --- STYLES FOR MOBILE MENU ---
+        @media (max-width: 900px) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: $white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            z-index: 101;
+
+            // Animacja wjazdu
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+
+            // Klasa dodawana przez Reacta
+            &.open {
+                transform: translateX(0);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    // --- LISTA LINKÓW ---
     &__nav-list {
         display: flex;
         gap: 32px;
+        list-style: none;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
 
         a {
             font-family: $font-body;
@@ -49,6 +109,11 @@
             font-size: 1rem;
             color: $black;
             transition: $transition-base;
+            text-decoration: none;
+
+            @media (max-width: 900px) {
+                font-size: 1.5rem; // Większe linki na telefonie
+            }
 
             &:hover,
             &.active {
@@ -57,11 +122,15 @@
         }
     }
 
-    @media (max-width: 900px) {
+    // --- CTA BUTTON ---
+    &__cta {
+        @media (max-width: 900px) {
 
-        &__nav,
-        &__cta {
-            display: none; // Wymagałoby implementacji menu mobilnego
+            // Na mobile przycisk też jest większy
+            .btn {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+            }
         }
     }
 }
