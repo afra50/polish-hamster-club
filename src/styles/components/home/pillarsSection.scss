@@ -3,103 +3,88 @@
 .pillars-section {
     position: relative;
     background-color: $color-first; // Morski
-    padding: 220px 0 160px;
+
+    // PADDING:
+    // Góra: Min 120px (7.5rem), Max 220px (13.75rem)
+    // Dół: Min 100px (6.25rem), Max 160px (10rem)
+    // To uwzględnia miejsce na fale, które na mobile są mniejsze
+    padding: clamp(7.5rem, 15vw, 13.75rem) 0 clamp(6.25rem, 10vw, 10rem);
+
     margin-top: -2px;
     z-index: 1;
 
-    // --- FALA GÓRNA (BIAŁA) ---
-    .pillars-wave-top {
-        position: absolute;
-        top: -1px;
-        left: 0;
-        width: 100%;
-        line-height: 0;
-        z-index: 2;
-
-        svg {
-            display: block;
-            width: 100%;
-            height: 200px;
-
-            path {
-                fill: $white;
-            }
-        }
-    }
-
-    // --- FALA DOLNA (BIAŁA) ---
-    .pillars-wave-bottom {
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 100%;
-        line-height: 0;
-        z-index: 2;
-
-        svg {
-            display: block;
-            width: 100%;
-            // Zwiększona wysokość dla głębszego dołka
-            height: 180px;
-
-            path {
-                fill: $white; // Kolor następnej sekcji (biały)
-            }
-        }
-    }
-
-    // ... reszta stylów kontenera i treści bez zmian ...
+    // Kontener
     &__container {
         @include container;
         position: relative;
         z-index: 3;
         text-align: center;
+
+        // Na mobile dodajemy trochę paddingu bocznego, żeby treść nie dotykała krawędzi
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
+    // Nagłówek sekcji
     &__header {
-        margin-bottom: 60px;
+        // Margines dolny: od 40px do 60px
+        margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
 
         h2 {
             color: $white !important;
-            font-size: 2.5rem;
-            margin-bottom: 12px;
+            // Font: od 32px do 40px
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
         }
 
         p {
             color: rgba($white, 0.9);
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
         }
     }
 
+    // Siatka kafelków
     &__grid {
         display: flex;
         justify-content: center;
-        gap: 60px;
-        margin-bottom: 60px;
+        // Odstępy między kafelkami: od 32px do 60px
+        gap: clamp(2rem, 4vw, 3.75rem);
+        margin-bottom: clamp(3rem, 5vw, 3.75rem);
         flex-wrap: wrap;
     }
 
+    // Pojedynczy kafelek
     .pillar-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-decoration: none;
         color: $white;
-        width: 250px;
+
+        // SZEROKOŚĆ:
+        // Na mobile zajmuje 100% dostępnego miejsca (ale nie więcej niż 280px)
+        // Dzięki temu na bardzo małych ekranach się nie rozjedzie
+        width: 100%;
+        max-width: 17.5rem; // ok. 280px
+
         border-radius: $border-radius;
-        border-style: dashed;
-        border-color: $white;
-        border-width: 1px;
-        padding: 2rem;
-        transition: all 0.3s;
+        border: 1px dashed rgba($white, 0.5); // Subtelniejszy kolor obramowania
+
+        // Padding wewnątrz kafelka: od 24px do 32px
+        padding: clamp(1.5rem, 2vw, 2rem);
+
+        transition: all 0.3s ease-in-out;
 
         &__icon {
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
             color: $white;
+            transition: transform 0.3s;
         }
 
         h3 {
-            font-size: 1.6rem;
-            margin-bottom: 8px;
+            font-size: 1.5rem; // ok. 24px
+            margin-bottom: 0.5rem;
             font-weight: 600;
             color: $white;
         }
@@ -111,24 +96,42 @@
             color: $white;
         }
 
+        // Efekt Hover
         &:hover {
             transform: translateY(-5px);
-            opacity: 1;
-            background-color: rgba($white, 0.3)
+            background-color: rgba($white, 0.1);
+            border-color: $white;
+            border-style: solid; // Zmiana na linię ciągłą przy najechaniu
+
+            .pillar-item__icon {
+                transform: scale(1.1);
+            }
         }
     }
 
+    // Przycisk
     .btn--outline-white {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
         border: 2px solid $white;
         color: $white;
-        padding: 12px 32px;
+        padding: 0.75rem 2rem;
         border-radius: 50px;
         font-weight: 600;
         transition: all 0.3s;
+        text-decoration: none;
 
         &:hover {
             background: $white;
             color: $color-first;
+        }
+
+        // Na mobile przycisk nieco szerszy, łatwiej kliknąć
+        @media (max-width: 767px) {
+            width: 100%;
+            justify-content: center;
+            max-width: 280px;
         }
     }
 }

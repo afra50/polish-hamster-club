@@ -3,12 +3,20 @@
 .hero-section {
     position: relative;
     width: 100%;
-    background-color: $pure-white; // Tło pod spodem
-    overflow: hidden;
+    background-color: $pure-white;
     display: flex;
     align-items: center;
+    padding-bottom: 1.5rem;
 
-    // Główny kontener FLEX (nie grid)
+    @media (max-width: 1024px) {
+        padding-bottom: 6.5rem;
+    }
+
+    @media (max-width: 767px) {
+        padding-bottom: 4rem;
+    }
+
+
     &__container {
         display: flex;
         width: 100%;
@@ -16,6 +24,8 @@
         position: relative;
         z-index: 2;
 
+        // --- BREAKPOINT: TABLET / LAPTOP (Poniżej 1024px) ---
+        // Tutaj zmieniamy układ z poziomego na pionowy
         @media (max-width: 1024px) {
             flex-direction: column;
             padding-bottom: 0;
@@ -24,8 +34,9 @@
 
     // --- LEWA STRONA (ZDJĘCIE) ---
     &__image-box {
-        width: 60%; // Zdjęcie jest szerokie
-        height: 700px; // Wysokie zdjęcie
+        width: 60%;
+        // Wysokość: min 28rem (448px), preferowana 75% wysokości okna, max 45rem (720px)
+        height: clamp(28rem, 75vh, 45rem);
         position: relative;
         z-index: 1;
 
@@ -35,47 +46,77 @@
             object-fit: cover;
             object-position: center;
             display: block;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            // Cień w rem (20px 40px)
+            box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.15);
         }
 
+        // Tablet (1024px)
         @media (max-width: 1024px) {
             width: 100%;
-            height: 450px;
+            // Na tablecie zdjęcie nie musi być tak wysokie, wystarczy połowa ekranu
+            height: clamp(25rem, 50vh, 35rem);
 
             .hero-img {
-                border-radius: 0;
+                border-radius: 0; // Zdjęcie na całą szerokość bez zaokrągleń
             }
+        }
+
+        // Mobile (767px)
+        @media (max-width: 767px) {
+            // Na telefonie jeszcze niższe, żeby szybciej zobaczyć treść
+            height: 25rem; // ok. 400px
         }
     }
 
     // --- PRAWA STRONA (KONTENER NA KARTĘ) ---
     &__content-box {
-        width: 30%; // Reszta szerokości
+        width: 40%;
         position: relative;
-        z-index: 5; // Musi być wyżej niż zdjęcie
-        padding-right: 40px; // Odstęp od prawej krawędzi ekranu
+        z-index: 5;
+        // Odstęp od prawej krawędzi: płynny od 16px do 80px
+        padding-right: clamp(1rem, 5vw, 5rem);
 
+        // Tablet (1024px)
         @media (max-width: 1024px) {
             width: 100%;
-            padding: 0 24px;
-            margin-top: -80px; // Na mobilu wciągamy kartę do góry na zdjęcie
+            padding: 0 1.5rem; // 24px marginesu po bokach
+            // Wciągamy kartę na zdjęcie (negatywny margines góra)
+            margin-top: -5rem;
+        }
+
+        // Mobile (767px)
+        @media (max-width: 767px) {
+            margin-top: -3rem; // Mniejsze wciągnięcie na małym ekranie
+            padding: 0 1rem; // 16px marginesu
         }
     }
 
-    // --- KARTA Z TEKSTEM (OVERLAP) ---
+    // --- KARTA Z TEKSTEM ---
     .hero-card {
         background-color: $white;
-        padding: 60px 50px;
         border-radius: $border-radius;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        // Cień w rem
+        box-shadow: 0 1.8rem 3.75rem rgba(0, 0, 0, 0.1);
 
-        // KLUCZOWE: Ujemny margines przesuwa kartę w lewo NA ZDJĘCIE
-        margin-left: -120px;
+        // PADDING WEWNĘTRZNY:
+        // Góra/Dół: min 40px, max 64px
+        // Lewo/Prawo: min 32px, max 56px
+        padding: clamp(2.5rem, 4vw, 4rem) clamp(2rem, 3.5vw, 3.5rem);
 
+        // Przesunięcie karty w lewo na zdjęcie (ok. -120px)
+        margin-left: -7.5rem;
+
+        // Tablet (1024px)
         @media (max-width: 1024px) {
-            margin-left: 0; // Reset na mobilu
+            margin-left: 0; // Kasujemy przesunięcie boczne
             width: 100%;
-            text-align: center;
+            text-align: center; // Centrujemy tekst
+            box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        // Mobile (767px)
+        @media (max-width: 767px) {
+            padding: 2rem 1.5rem; // Mniejszy padding w środku karty
         }
 
         .accent-surtitle {
@@ -83,46 +124,32 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
             color: $black;
-            font-size: 0.85rem;
+            font-size: 0.875rem; // 14px
         }
 
         h1 {
-            font-size: 3.2rem;
+            // FONT SIZE: Płynny. Min 36px, Max 56px.
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
             line-height: 1.1;
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
             color: $black;
 
-            @media (max-width: 768px) {
-                font-size: 2.5rem;
+            // Na mobile lekko zmniejszamy (opcjonalne, bo clamp już to robi, ale dla pewności)
+            @media (max-width: 767px) {
+                line-height: 1.2; // Trochę luźniej na małym ekranie
             }
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.125rem; // 18px
             color: $color-second;
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
             line-height: 1.6;
-        }
-    }
 
-    // --- FALA NA DOLE ---
-    .hero-wave {
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 100%;
-        line-height: 0;
-        z-index: 3; // Nad zdjęciem, ale pod kartą (jeśli by się stykały)
-
-        svg {
-            display: block;
-            width: 100%;
-            height: 180px; // Wysoka fala
-
-            path {
-                fill: $white;
+            @media (max-width: 767px) {
+                font-size: 1rem; // 16px na telefonie
             }
         }
     }

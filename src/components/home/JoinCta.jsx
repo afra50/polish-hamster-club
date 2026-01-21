@@ -1,14 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import joinHamsterImg from "../../assets/join-hamster-floating.png"; // Upewnij się, że to PNG
+import joinHamsterImg from "../../assets/join-hamster-floating.png";
+import DecorativeCircles from "../ui/DecorativeCircles";
 
 export default function JoinCta() {
   return (
     <section className="join-cta">
       <div className="join-cta__container">
-        {/* Lewa: Zdjęcie chomika */}
+        {/* Lewa: Zdjęcie chomika + TŁO */}
         <div className="join-cta__image">
-          <img src={joinHamsterImg} alt="Chomik stojący" />
+          {/* Tu wstawiamy nasz nowy komponent z tłami */}
+          <DecorativeCircles />
+
+          {/* Zdjęcie chomika */}
+          <img
+            src={joinHamsterImg}
+            alt="Chomik stojący"
+            className="hamster-img"
+          />
         </div>
 
         {/* Prawa: Tekst */}

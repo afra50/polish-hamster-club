@@ -1,0 +1,90 @@
+@use '../../variables' as *;
+
+.decorative-circles-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        // Dzięki temu nie musimy pisać height. 
+        // Wysokość dopasuje się do szerokości, tworząc idealne koło.
+        aspect-ratio: 1;
+
+        // --- OKRĄG 1: Duży, centralny ---
+        &--1 {
+            background-color: rgba($color-first, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+
+            // 1. Mobile (Domyślnie)
+            width: 16rem; // ok. 250px
+
+            // 2. Tablet (min 768px)
+            @media (min-width: 768px) {
+                width: 20rem;
+            }
+
+            // 3. Desktop (min 1024px) - Twoja oryginalna wielkość
+            @media (min-width: 1024px) {
+                width: 28.125rem; // 450px
+            }
+        }
+
+        // --- OKRĄG 2: Średni, dół-lewo ---
+        &--2 {
+            background-color: rgba($color-first, 0.2);
+
+            // Pozycje dla mobile (trochę bardziej schowane)
+            bottom: -5%;
+            left: -15%;
+
+            // 1. Mobile
+            width: 10rem; // ok. 160px
+
+            // 2. Tablet
+            @media (min-width: 768px) {
+                width: 14rem; // ok. 224px
+                left: 10%;
+            }
+
+            // 3. Desktop - Oryginał
+            @media (min-width: 1024px) {
+                width: 18.75rem; // 300px
+                bottom: -20%;
+                left: -25%;
+            }
+        }
+
+        // --- OKRĄG 3: Mały, góra-prawo ---
+        &--3 {
+            background-color: rgba($color-first, 0.25);
+
+            // Pozycje dla mobile
+            top: 5%;
+            right: 0%;
+
+            // 1. Mobile
+            width: 6.25rem; // ok. 100px
+
+            // 2. Tablet
+            @media (min-width: 768px) {
+                width: 8rem; // ok. 128px
+                right: 20%;
+            }
+
+            // 3. Desktop - Oryginał
+            @media (min-width: 1024px) {
+                width: 11.25rem; // 180px
+                right: 5%;
+                top: 0%;
+            }
+        }
+    }
+}
