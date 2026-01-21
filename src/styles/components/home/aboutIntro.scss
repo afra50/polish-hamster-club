@@ -48,16 +48,6 @@
             font-size: clamp(1rem, 1.5vw, 1.125rem);
             line-height: 1.6;
         }
-
-        // Przycisk "O klubie"
-        .btn {
-
-            // Na mobile przycisk na całą szerokość lub większy
-            @media (max-width: 767px) {
-                width: 100%;
-                justify-content: center;
-            }
-        }
     }
 
     // --- ZDJĘCIE ---

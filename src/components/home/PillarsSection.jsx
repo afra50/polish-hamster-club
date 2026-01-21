@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BookOpen, Award, Calendar } from "lucide-react";
 import WaveDoubleCurve from "../ui/WaveDoubleCurve";
 import WaveAsymmetricDip from "../ui/WaveAsymmetricDip";
+import Button from "../ui/Button";
 
 export default function PillarsSection() {
   const pillars = [
@@ -45,9 +46,9 @@ export default function PillarsSection() {
           ))}
         </div>
         <div className="pillars-section__cta">
-          <Link to="/knowledge" className="btn btn--outline-white">
+          <Button to="/knowledge" variant="outline-white">
             Baza wiedzy →
-          </Link>
+          </Button>
         </div>
       </div>
 

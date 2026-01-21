@@ -1,0 +1,80 @@
+// Plik: src/styles/components/ui/_button.scss
+@use '../../variables' as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    // Ważne: ustawienie box-sizing, żeby border nie zmieniał rozmiaru przycisku
+    box-sizing: border-box;
+
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5; // Ustabilizowanie wysokości linii
+    text-decoration: none !important; // Wymuszenie braku podkreślenia (nadpisuje style linków)
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+
+    // --- WARIANT: PRIMARY (Pełny kolor) ---
+    &--primary {
+        background-color: $color-first;
+        color: $white;
+        border-color: $color-first;
+
+        &:hover {
+            background-color: darken($color-first, 10%);
+            border-color: darken($color-first, 10%);
+            color: $white; // Upewniamy się, że tekst zostaje biały
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba($color-first, 0.3); // Dodatkowy cień
+        }
+    }
+
+    &--outline {
+        background-color: transparent;
+        color: $color-first;
+        border-color: $color-first;
+
+        &:hover {
+            // ZMIANA: Wypełniamy przycisk kolorem, żeby tekst był czytelny
+            background-color: $color-first;
+            border-color: $color-first;
+
+            // Tekst na biały (kontrastuje z morskim tłem)
+            color: $white !important;
+
+            transform: translateY(-2px);
+        }
+    }
+
+    // --- WARIANT: OUTLINE WHITE (Biały obrys -> Białe tło) ---
+    &--outline-white {
+        background-color: transparent;
+        color: $white;
+        border-color: $white;
+
+        &:hover {
+            background-color: $white;
+            border-color: $white;
+            color: $color-first !important; // Tekst zmienia się na morski
+            transform: translateY(-2px);
+        }
+    }
+
+    // --- MOBILE ---
+    @media (max-width: 767px) {
+        width: 100%;
+        max-width: 300px;
+        padding: 1rem 2rem;
+        // Wyśrodkowanie przycisku jeśli jest w flex containerze
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

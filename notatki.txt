@@ -1,3 +1,1 @@
-- wydzielic button do komponentu i jego style z app.scss (uzyc go tez wszedzie w komponentach)
-- footer responsywnosc
 - 404

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import Button from "../ui/Button";
 import aboutImg from "../../assets/about-breeder.jpg";
 
 export default function AboutIntro() {
@@ -20,9 +21,9 @@ export default function AboutIntro() {
             tellus elit, varius non commodo eget, mattis vel eros. In sed ornare
             nulla.
           </p>
-          <Link to="/about" className="btn btn--outline">
+          <Button to="/about" variant="outline">
             O klubie <ArrowRight size={18} />
-          </Link>
+          </Button>
         </div>
 
         {/* Kolumna 2: Zdjęcie */}

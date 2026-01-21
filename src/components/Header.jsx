@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Importujemy ikony
+import Button from "./ui/Button";
 import "../styles/components/header.scss";
 
 export default function Header() {
@@ -73,9 +74,9 @@ export default function Header() {
           </nav>
 
           <div className="header__cta">
-            <Link to="/join" className="btn btn--primary" onClick={closeMenu}>
+            <Button to="/join" variant="primary" onClick={closeMenu}>
               Dołącz do nas
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

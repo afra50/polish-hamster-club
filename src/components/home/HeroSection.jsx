@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import heroImg from "../../assets/hero-hamster.jpg";
 import DoubleWave from "../ui/DoubleWave";
+import Button from "../ui/Button";
 
 export default function HeroSection() {
   return (
@@ -25,9 +26,9 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-actions">
-              <Link to="/breeders" className="btn btn--primary">
+              <Button to="/breeders" variant="primary">
                 Zobacz hodowle <ArrowRight size={20} />
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import joinHamsterImg from "../../assets/join-hamster-floating.png";
 import DecorativeCircles from "../ui/DecorativeCircles";
+import Button from "../ui/Button";
 
 export default function JoinCta() {
   return (
@@ -35,9 +36,9 @@ export default function JoinCta() {
             viverra ornare, eros dolor interdum nulla, ut commodo diam libero
             vitae erat.
           </p>
-          <Link to="/join" className="btn btn--primary">
+          <Button to="/join" variant="primary">
             Dołącz do nas →
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

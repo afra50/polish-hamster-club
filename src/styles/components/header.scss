@@ -121,16 +121,4 @@
             }
         }
     }
-
-    // --- CTA BUTTON ---
-    &__cta {
-        @media (max-width: 900px) {
-
-            // Na mobile przycisk też jest większy
-            .btn {
-                padding: 16px 40px;
-                font-size: 1.1rem;
-            }
-        }
-    }
 }

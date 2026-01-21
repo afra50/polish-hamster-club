@@ -73,16 +73,5 @@
             // Font size: Min 16px, Max 18px
             font-size: clamp(1rem, 1.5vw, 1.125rem);
         }
-
-        // Przycisk
-        .btn {
-
-            // Na telefonie przycisk na całą szerokość (dla łatwiejszego klikania)
-            @media (max-width: 767px) {
-                width: 100%;
-                justify-content: center;
-                max-width: 300px; // Ale bez przesady z szerokością
-            }
-        }
     }
 }
