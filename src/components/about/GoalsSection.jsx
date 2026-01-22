@@ -1,9 +1,18 @@
 import React from "react";
 import { Check } from "lucide-react";
+import WaveAsymmetricDip from "../ui/WaveAsymmetricDip";
 
 export default function GoalsSection() {
   return (
     <section className="goals-section">
+      {/* --- FALE GÓRNE (Tworzą górną wstęgę) --- */}
+      <div className="goals-section__waves-top">
+        {/* Warstwa 1: Zielona (pod spodem) */}
+        <WaveAsymmetricDip className="ui-wave--goal-green" />
+        {/* Warstwa 2: Biała (maska na wierzchu) */}
+        <WaveAsymmetricDip className="ui-wave--goal-white" />
+      </div>
+
       <div className="goals-section__container">
         <h2>Nasze Cele</h2>
 
@@ -18,7 +27,6 @@ export default function GoalsSection() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
-
             <div className="goal-item">
               <span className="goal-item__icon">
                 <Check size={16} />
@@ -42,7 +50,6 @@ export default function GoalsSection() {
                 <p>Aenean lacinia bibendum nulla sed consectetur.</p>
               </div>
             </div>
-
             <div className="goal-item">
               <span className="goal-item__icon">
                 <Check size={16} />
@@ -54,6 +61,14 @@ export default function GoalsSection() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* --- FALE DOLNE (Tworzą dolną wstęgę) --- */}
+      <div className="goals-section__waves-bottom">
+        {/* Warstwa 1: Zielona (pod spodem) */}
+        <WaveAsymmetricDip className="ui-wave--goal-green" />
+        {/* Warstwa 2: Biała (maska na wierzchu) */}
+        <WaveAsymmetricDip className="ui-wave--goal-white" />
       </div>
     </section>
   );
