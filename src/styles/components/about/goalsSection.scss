@@ -1,0 +1,73 @@
+@use "../../variables" as *;
+
+.goals-section {
+  background-color: $white;
+  padding: clamp(3rem, 6vw, 6rem) 0;
+
+  &__container {
+    @include container;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    color: $black;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+
+/* ===== POJEDYNCZY CEL ===== */
+
+.goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.goal-item__icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: $color-first;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+
+  svg {
+    stroke-width: 3; // wyraźniejszy check
+  }
+}
+
+.goal-item__content {
+  h3 {
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem); // ⬅️ WIĘKSZE
+    font-weight: 700; // ⬅️ BOLD jak na screenie
+    margin-bottom: 0.4rem;
+    color: $black;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    color: $color-second;
+    line-height: 1.6;
+  }
+}

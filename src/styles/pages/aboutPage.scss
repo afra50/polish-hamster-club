@@ -1,0 +1,11 @@
+// Główny plik stylów dla strony About, importuje style komponentów
+// Kolejność importu ma znaczenie dla kaskadowości
+@use "../components/about/aboutHero.scss";
+@use "../components/about/missionSection.scss";
+@use "../components/about/goalsSection.scss";
+@use "../components/about/boardSection.scss";
+
+.about-page {
+  // Ewentualne style globalne tylko dla about page
+  overflow-x: hidden;
+}

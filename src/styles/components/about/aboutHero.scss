@@ -1,0 +1,37 @@
+@use "../../variables" as *;
+
+.about-hero {
+  position: relative;
+  min-height: clamp(22rem, 55vw, 38rem);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: $white;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); // ⬅️ o tym niżej
+    z-index: 1;
+  }
+
+  &__container {
+    @include container; // ✅ TWÓJ MIXIN
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 0.5rem;
+      color: $white;
+    }
+
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      opacity: 0.9;
+      color: $white;
+    }
+  }
+}
