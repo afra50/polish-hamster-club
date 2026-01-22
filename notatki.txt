@@ -1,4 +1,1 @@
 - 404
-- responsywnosc hodowle
-- lista hodowli
-- fala nad footerem
