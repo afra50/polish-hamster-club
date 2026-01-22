@@ -1,0 +1,137 @@
+@use "../../variables" as *;
+
+.representative-section {
+  background-color: $white;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    @include container;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+    color: $black;
+  }
+}
+
+/* ===== WIZUALNA CZĘŚĆ ===== */
+
+.representative-visual {
+  position: relative;
+  width: min(90vw, 40rem);
+  height: 20rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* dekoracyjne kółka POD ikoną */
+  .decorative-circles-layer {
+    z-index: 1;
+
+    .circle {
+      position: absolute;
+      opacity: 0.85;
+    }
+
+    // CENTRALNE TŁO (za ikoną)
+    .circle--1 {
+      width: 22rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // LEWE – BLIŻEJ, DOTYKA
+    .circle--2 {
+      width: 15rem;
+      left: -5%;
+    }
+
+    // PRAWE – DALEJ, ODDECH
+    .circle--3 {
+      width: 12rem;
+      left: 70%;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 2;
+
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+
+    // ZAMIANA: zamiast pełnego koloru – transparentny
+    background-color: rgba($color-first, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color-first;
+
+    // delikatna aura zamiast ciężkiego cienia
+    box-shadow: 0 0 0 1px rgba($color-first, 0.2);
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+      stroke-width: 1.8;
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: 14rem;
+
+    .decorative-circles-layer {
+      .circle--1 {
+        width: 14rem;
+      }
+
+      .circle--2 {
+        width: 8.5rem;
+        left: -5%;
+      }
+
+      .circle--3 {
+        width: 7rem;
+      }
+    }
+
+    &__icon {
+      width: 6rem;
+      height: 6rem;
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}
+
+/* ===== TEKST POD SPODem ===== */
+
+.representative-meta {
+  h3 {
+    font-family: $font-accent;
+    font-size: 1.7rem;
+    margin-bottom: 0.25rem;
+    color: $black;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-first;
+  }
+}
