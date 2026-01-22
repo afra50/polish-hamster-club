@@ -1,6 +1,5 @@
 import React from "react";
 import { Globe, Facebook, Instagram, Mail } from "lucide-react"; // Usunąłem Phone
-import "../../styles/components/breeders/breederCard.scss";
 
 export default function BreederCard({ data }) {
   // Dodajemy 'owners' do destrukturyzacji

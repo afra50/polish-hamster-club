@@ -1,4 +1,6 @@
 @use '../variables' as *;
+@use "../components/breeders/breederCard.scss";
+@use "../components/breeders/breedersHero.scss";
 
 .breeders-page {
     overflow-x: clip;
