@@ -1,51 +1,77 @@
 @use '../variables' as *;
 
-.breeders-list {
-    background-color: $pure-white;
-    position: relative;
-    padding-top: 4rem;
+.breeders-page {
+    overflow-x: clip;
 
-    // Duży padding dolny, żeby karty nie wjeżdżały na falę stopki
-    padding-bottom: clamp(10rem, 20vw, 18rem);
-
-    z-index: 5;
-
-    &__container {
-        @include container;
+    .breeders-list {
+        background-color: $white;
         position: relative;
-        z-index: 10;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-        justify-content: center;
+        padding: 0 2rem;
+        padding-top: 1rem;
+
+        // Duży padding dolny, żeby karty nie wjeżdżały na falę stopki
+        padding-bottom: clamp(10rem, 20vw, 18rem);
+
+        z-index: 5;
 
         @media (max-width: 767px) {
-            gap: 24px;
-            grid-template-columns: 1fr;
-        }
-    }
-
-    // --- STYLIZACJA FALI PRZY STOPCE ---
-    // Ta klasa musi być wewnątrz .breeders-list, aby nadpisać style globalne
-    .ui-wave--bottom-footer {
-        position: absolute;
-        bottom: -1px; // Usuwa linię łączenia
-        left: 0;
-        width: 100%;
-        line-height: 0;
-        z-index: 2;
-
-        path {
-            fill: $black;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
-        svg {
-            // ZMIANA: Zwiększona wysokość, żeby fala była "falująca", a nie płaska.
-            // Było 5rem-10rem, teraz jest 8rem-20rem.
-            height: clamp(8rem, 25vw, 20rem);
+        &__container {
+            // ZMIANA 1: Zmniejszamy szerokość kontenera.
+            // Było 1100px. Przy 960px karty będą węższe i zgrabniejsze.
+            max-width: 1100px;
 
-            // Odwracamy falę w poziomie, żeby wyglądała inaczej niż ta u góry
-            transform: scaleX(-1);
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            display: grid;
+
+            // ZMIANA 2: Zmieniamy definicję kolumn.
+            // Zmniejszyłem minmax z 300px na 260px.
+            // Dzięki temu na mniejszych ekranach (np. laptop) zmieszczą się 3 karty obok siebie,
+            // zamiast przeskakiwać do 2 szerokich.
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+            // ZMIANA 3: Większy odstęp.
+            // Większa dziura między kartami = węższe karty.
+            gap: 50px;
+
+            justify-content: center;
+
+            @media (max-width: 767px) {
+                gap: 24px;
+                grid-template-columns: 1fr; // Na telefonie jedna kolumna
+                max-width: 400px; // Opcjonalnie: ograniczenie szerokości na mobile, żeby nie były gigantyczne
+            }
+        }
+
+        .ui-wave--bottom-footer {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 2;
+
+            path {
+                fill: $black;
+            }
+
+            svg {
+                // ZMIANA 2: Stonowanie fali.
+                // Zmieniamy clamp na mniejsze wartości.
+                // 4rem (mobilki) -> 12vw (skalowanie) -> 8rem (max na desktopie)
+                height: clamp(4rem, 12vw, 8rem);
+
+                // Jeśli chcesz, żeby fala była jeszcze bardziej "płaska" i łagodna,
+                // możesz ją rozciągnąć na szerokość (np. 150%) zachowując odbicie:
+                // transform: scaleX(-1.5); 
+                // Ale na razie zostawmy zwykłe odwrócenie:
+                transform: scaleX(-1);
+            }
         }
     }
 }

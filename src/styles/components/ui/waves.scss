@@ -53,53 +53,13 @@
         }
     }
 
+    // --- WARIANTY KSZTAŁTU ---
     &--big-curve {
         z-index: 3;
 
         svg {
+            // Domyślna wysokość fali, uniwersalna dla całego projektu
             height: clamp(6.25rem, 25vw, 20rem);
-        }
-
-        // 1. FALA MORSKA (Wstęga)
-        &.ui-wave--hero-bottom {
-            z-index: 10;
-
-            // ZMIANA 1: Obniżamy falę (zmniejszamy bottom). 
-            // Było "3rem do 7rem", teraz dajemy mniej, żeby nie wchodziła na chomiki.
-            bottom: clamp(1rem, 5vw, 3rem);
-
-            // Zostawiamy obrót, bo daje fajny efekt asymetrii
-            transform-origin: left bottom;
-            transform: rotate(-2deg) scale(1.05);
-
-            svg {
-                // Wysokość fali
-                height: clamp(10rem, 30vw, 25rem);
-            }
-
-            path {
-                fill: $color-first !important;
-            }
-        }
-
-        // 2. FALA BIAŁA (Maska na wierzchu)
-        &.ui-wave--hero-mask {
-            z-index: 11;
-            bottom: -1px;
-
-            // ZMIANA 2: Skalujemy maskę.
-            // Powiększenie maski o 10% (scale 1.1) sprawia, że na pewno 
-            // przykryje ona dół morskiej fali i nic nie będzie "ucięte" na krawędziach.
-            transform-origin: bottom center;
-            transform: scale(1.1);
-
-            svg {
-                height: clamp(10rem, 30vw, 25rem);
-            }
-
-            path {
-                fill: $pure-white !important;
-            }
         }
     }
 }

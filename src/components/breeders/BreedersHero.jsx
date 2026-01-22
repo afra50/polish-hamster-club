@@ -1,5 +1,5 @@
 import React from "react";
-import hamstersGroupImg from "../../assets/hamsters-group.png";
+import heroBreeders from "../../assets/hero-breeders.jpg";
 import WaveBigCurve from "../ui/WaveBigCurve";
 import "../../styles/components/breeders/breedersHero.scss";
 
@@ -7,12 +7,11 @@ export default function BreedersHero() {
   return (
     <section
       className="breeders-hero"
-      style={{ backgroundImage: `url(${hamstersGroupImg})` }}
+      style={{ backgroundImage: `url(${heroBreeders})` }}
     >
       <div className="breeders-hero__container">
         <div className="breeders-hero__text">
           <h1>Nasze Hodowle</h1>
-          <p>Poznaj zarejestrowane hodowle spełniające najwyższe standardy.</p>
         </div>
       </div>
 

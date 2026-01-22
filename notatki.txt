@@ -1,5 +1,4 @@
 - 404
-- ogarnac style fali w breedershero, bo chyba jest czesc w komponencie zamiast tylko w waves.scss
 - responsywnosc hodowle
 - lista hodowli
 - fala nad footerem
