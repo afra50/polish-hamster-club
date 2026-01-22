@@ -1,0 +1,251 @@
+@use '../variables' as *;
+
+// 1. GŁÓWNY LAYOUT STRONY
+.join-us-page {
+    padding-top: clamp(6rem, 10vw, 9rem); // Odstęp od góry (zamiast Hero)
+    background-color: $pure-white;
+    overflow-x: clip; // Ważne przy falach 120% szerokości
+}
+
+// 2. NAGŁÓWEK TEKSTOWY
+.join-header {
+    text-align: center;
+    padding: 0 1rem 3rem 1rem;
+
+    &__container {
+        @include container;
+        max-width: 800px;
+    }
+
+    h1 {
+        font-family: $font-heading;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: $black;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    p {
+        font-size: 1.125rem;
+        color: $color-second;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+// 3. SEKCKA Z KARTAMI I FALAMI
+.membership-section {
+    position: relative;
+    // TŁO: Jasny morski (używamy Twojego koloru z alpha)
+    background-color: rgba($color-first, 0.15);
+    padding: clamp(8rem, 15vw, 12rem) 0;
+    z-index: 1;
+
+    &__container {
+        @include container;
+        position: relative;
+        z-index: 10;
+    }
+
+    .membership-intro {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: $black;
+        }
+    }
+
+    // --- LOGIKA FAL (BIAŁE NA KOLOROWYM TLE) ---
+    &__wave-top,
+    &__wave-bottom {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        line-height: 0;
+        pointer-events: none;
+        z-index: 2;
+
+        .ui-wave--white {
+            path {
+                fill: $pure-white !important;
+            }
+        }
+    }
+
+    // Górna fala (zwisa)
+    &__wave-top {
+        top: 0;
+        transform: scaleY(-1);
+
+        .ui-wave--white {
+            width: 120%; // Szersza fala
+            left: -10%;
+            bottom: -1px; // Przyklejona do krawędzi (bez ucięcia!)
+        }
+    }
+
+    // Dolna fala (wyrasta)
+    &__wave-bottom {
+        bottom: 0;
+        transform: scaleX(-1);
+
+        .ui-wave--white {
+            width: 120%;
+            left: -5%;
+            bottom: -1px; // Przyklejona do krawędzi
+        }
+    }
+}
+
+// 4. SIATKA KART (GRID)
+.plans-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// 5. STYL KARTY
+.plan-card {
+    background: $pure-white;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 20px rgba($color-first, 0.08); // Cień w Twoim kolorze
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid transparent; // Domyślnie brak paska
+
+    &--primary {
+        border-top-color: $color-first; // Wyróżniona karta ma pasek
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+
+        h3 {
+            font-family: $font-heading;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $black;
+        }
+    }
+
+    &__features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.5rem 0;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: $color-second;
+            line-height: 1.4;
+
+            svg {
+                color: $color-first; // Zielony ptaszek
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: auto;
+
+        .full-width {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+// 6. SEKCJA KROKÓW (PLIKI I PROCES)
+.steps-section {
+    padding: 6rem 0;
+    background-color: $pure-white;
+
+    &__container {
+        @include container;
+        text-align: center;
+    }
+
+    h2 {
+        font-family: $font-heading;
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        color: $black;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 3rem;
+        margin-bottom: 4rem;
+        text-align: left; // Tekst do lewej
+    }
+
+    .step-item {
+        &__icon {
+            // Kółko z ikoną
+            width: 50px;
+            height: 50px;
+            background-color: $color-first;
+            color: $white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: $color-second;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        // Link do pliku (wygląda jak link)
+        .file-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $color-first;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+
+            &:hover {
+                color: darken($color-first, 10%);
+            }
+        }
+    }
+
+    .steps-note {
+        background: #f1f5f9;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        display: inline-block;
+        font-size: 0.9rem;
+        color: $color-second;
+    }
+}

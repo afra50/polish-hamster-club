@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import BreedersPage from "./pages/BreedersPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import JoinUsPage from "./pages/JoinUsPage";
 
 const routes = [
   {
@@ -17,6 +18,10 @@ const routes = [
   {
     path: "/breeders",
     element: <BreedersPage />,
+  },
+  {
+    path: "/dolacz",
+    element: <JoinUsPage />,
   },
   { path: "*", element: <NotFoundPage /> },
 ];
