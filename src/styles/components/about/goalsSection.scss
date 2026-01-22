@@ -44,7 +44,7 @@
   &__waves-bottom {
     bottom: 0;
     // ZMIANA KLUCZOWA:
-    // Odbijamy w poziomie (scaleX -1). 
+    // Odbijamy w poziomie (scaleX -1).
     // Dzięki temu kształt na dole jest odwrotny do tego na górze (nie jest lustrem pionowym).
     transform: scaleX(-1);
 
@@ -151,7 +151,7 @@
 .goal-item__content {
   h3 {
     font-family: $font-heading;
-    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+    font-size: clamp(1.15rem, 1.6vw, 1.5rem);
     font-weight: 700;
     margin-bottom: 0.4rem;
     color: $black;
