@@ -1,13 +1,14 @@
 import React from "react";
-import { Globe, Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { Globe, Facebook, Instagram, Mail } from "lucide-react"; // Usunąłem Phone
 import "../../styles/components/breeders/breederCard.scss";
 
 export default function BreederCard({ data }) {
-  const { name, city, specialization, logo, socials } = data;
+  // Dodajemy 'owners' do destrukturyzacji
+  const { name, owners, city, specialization, logo, socials } = data;
 
-  // Sprawdzamy, czy istnieją poszczególne grupy linków
   const hasSocials = socials.website || socials.facebook || socials.instagram;
-  const hasContact = socials.mail || socials.phone;
+  // Teraz kontakt to tylko mail (chyba że dodasz coś innego w przyszłości)
+  const hasContact = socials.mail;
 
   return (
     <article className="breeder-card">
@@ -19,6 +20,10 @@ export default function BreederCard({ data }) {
       {/* Treść */}
       <div className="breeder-card__content">
         <h3 className="breeder-card__name">{name}</h3>
+
+        {/* --- NOWE: Imię i nazwisko hodowcy --- */}
+        <p className="breeder-card__owners">{owners}</p>
+
         <p className="breeder-card__city">{city}</p>
 
         <div className="breeder-card__details">
@@ -26,9 +31,9 @@ export default function BreederCard({ data }) {
           <span className="value">{specialization}</span>
         </div>
 
-        {/* --- Pasek Akcji (Footer karty) --- */}
+        {/* --- Pasek Akcji --- */}
         <div className="breeder-card__actions">
-          {/* GRUPA 1: Social Media (Lewa strona) */}
+          {/* GRUPA 1: Social Media */}
           {hasSocials && (
             <div className="breeder-card__actions-group social-group">
               {socials.website && (
@@ -64,12 +69,12 @@ export default function BreederCard({ data }) {
             </div>
           )}
 
-          {/* Separator (widoczny tylko jeśli mamy obie grupy) */}
+          {/* Separator (tylko jeśli mamy i sociale, i kontakt) */}
           {hasSocials && hasContact && (
             <div className="breeder-card__separator"></div>
           )}
 
-          {/* GRUPA 2: Kontakt Bezpośredni (Prawa strona) */}
+          {/* GRUPA 2: Kontakt (Tylko mail) */}
           {hasContact && (
             <div className="breeder-card__actions-group contact-group">
               {socials.mail && (
@@ -77,16 +82,7 @@ export default function BreederCard({ data }) {
                   <Mail size={20} />
                 </a>
               )}
-              {socials.phone && (
-                // Usuwamy spacje z numeru dla linku "tel:"
-                <a
-                  href={`tel:${socials.phone.replace(/\s/g, "")}`}
-                  aria-label="Telefon"
-                  title="Zadzwoń"
-                >
-                  <Phone size={20} />
-                </a>
-              )}
+              {/* Telefon usunięty */}
             </div>
           )}
         </div>

@@ -1,41 +1,31 @@
-import logo1 from "../assets/logos/logo1.jpg";
-import logo2 from "../assets/logos/logo2.jpg";
-import logo3 from "../assets/logos/logo3.jpg";
+import preetyFluffyLogo from "../assets/logos/preety-fluffy-hamstery.png";
+import podrikLogo from "../assets/logos/podrik-hamstery.png";
 
 export const breedersData = [
   {
     id: 1,
-    name: "Chomikowe Szczęście",
-    city: "Warszawa",
-    specialization: "Chomik Syryjski",
-    logo: logo1,
+    name: "Preety Fluffy Hamstery",
+    owners: "Kamil Pokorski i Małgorzata Metryka",
+    city: "Wrocław",
+    specialization: "Chomik dżungarski",
+    logo: preetyFluffyLogo,
     socials: {
-      website: "#",
-      facebook: "#",
-      instagram: "#",
-      mail: "mailto:kontakt@example.com",
-      phone: "+48 500 123 456",
+      facebook: "https://www.facebook.com/prettyfluffyhamstery",
+      instagram: "https://www.instagram.com/prettyfluffyhamstery/",
+      mail: "mailto:prettyfluffyhamstery@gmail.com",
     },
   },
   {
     id: 2,
-    name: "Małe Łapki",
-    city: "Kraków",
-    specialization: "Chomik Dżungarski",
-    logo: logo2,
-    socials: { facebook: "#", instagram: "#" },
-  },
-  {
-    id: 3,
-    name: "Puszysty Zakątek",
-    city: "Poznań",
-    specialization: "Chomik Roborowskiego",
-    logo: logo3,
+    name: "Podrik Hamstery",
+    owners: "Marta Jesariew",
+    city: "Brzezina pod Wrocławiem",
+    specialization: "Chomik syryjski",
+    logo: podrikLogo,
     socials: {
-      website: "#",
-      mail: "mailto:test@test.pl",
-      phone: "+48 500 123 456",
+      facebook: "https://www.facebook.com/PodrikHamstery",
+      mail: "mailto:podrik@gmail.com",
+      website: "https://podrikhamstery.weebly.com/",
     },
   },
-  // ... dodaj więcej wedle uznania
 ];

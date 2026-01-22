@@ -21,7 +21,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba($black, 0.4); // Lekko przyciemniłem (0.4), żeby biały tekst był czytelny
+        background-color: rgba($black, 0.5); // Lekko przyciemniłem (0.4), żeby biały tekst był czytelny
         z-index: 1;
     }
 
@@ -57,12 +57,12 @@
         }
 
         h1 {
-            font-family: $font-heading; // Twoja czcionka ozdobna
-            font-size: clamp(1.5rem, 2.5vw, 5rem); // Lekko powiększyłem max
+            font-family: $font-heading;
+            font-size: clamp(2rem, 5vw, 7rem); // Lekko powiększyłem max
             color: $white;
+            font-weight: 400;
             margin-bottom: 1rem;
             letter-spacing: 0.2rem;
-            text-transform: uppercase;
         }
     }
 
