@@ -1,0 +1,51 @@
+@use '../variables' as *;
+
+.breeders-list {
+    background-color: $pure-white;
+    position: relative;
+    padding-top: 4rem;
+
+    // Duży padding dolny, żeby karty nie wjeżdżały na falę stopki
+    padding-bottom: clamp(10rem, 20vw, 18rem);
+
+    z-index: 5;
+
+    &__container {
+        @include container;
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        justify-content: center;
+
+        @media (max-width: 767px) {
+            gap: 24px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // --- STYLIZACJA FALI PRZY STOPCE ---
+    // Ta klasa musi być wewnątrz .breeders-list, aby nadpisać style globalne
+    .ui-wave--bottom-footer {
+        position: absolute;
+        bottom: -1px; // Usuwa linię łączenia
+        left: 0;
+        width: 100%;
+        line-height: 0;
+        z-index: 2;
+
+        path {
+            fill: $black;
+        }
+
+        svg {
+            // ZMIANA: Zwiększona wysokość, żeby fala była "falująca", a nie płaska.
+            // Było 5rem-10rem, teraz jest 8rem-20rem.
+            height: clamp(8rem, 25vw, 20rem);
+
+            // Odwracamy falę w poziomie, żeby wyglądała inaczej niż ta u góry
+            transform: scaleX(-1);
+        }
+    }
+}

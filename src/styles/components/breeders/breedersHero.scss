@@ -1,0 +1,51 @@
+@use '../../variables' as *;
+
+.breeders-hero {
+    position: relative;
+    background-color: $white; // Zmieniono na pure-white dla pewności
+
+    background-repeat: no-repeat;
+
+    // ZMIANA 3: Pozycja tła.
+    // 'center 85%' oznacza: wyśrodkowane w poziomie, a w pionie na 85% wysokości sekcji.
+    // Dzięki temu chomiki są nisko, ale nie na samym dnie.
+    // Możesz regulować tą liczbą (np. 70% = wyżej, 90% = niżej).
+    background-position: center 40%;
+
+    // Rozmiar bez zmian
+    background-size: min(100%, 900px) auto;
+
+    padding-top: clamp(4rem, 8vw, 6rem);
+
+    // Padding dolny musi być duży, żeby sekcja była wysoka
+    padding-bottom: clamp(14rem, 55vw, 45rem);
+
+    text-align: center;
+    overflow: visible;
+    min-height: 90vh; // Zapewnia, że sekcja jest wysoka na dużych ekranach
+
+    &__container {
+        @include container;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+    }
+
+    &__text {
+        max-width: 800px;
+
+        h1 {
+            font-family: $font-heading;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: $black;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: $color-second;
+        }
+    }
+}

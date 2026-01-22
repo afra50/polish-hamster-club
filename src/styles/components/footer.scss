@@ -2,7 +2,7 @@
 
 .footer {
     // Ciemne tło (np. ciemny morski lub czarny - #1a1a1a to bezpieczny standard dla ciemnych stopek)
-    background-color: #1a1a1a;
+    background-color: $black;
     color: $white;
     // Padding: mniejszy na mobile (3rem), większy na desktopie (5rem)
     padding: clamp(3rem, 5vw, 5rem) 0;
