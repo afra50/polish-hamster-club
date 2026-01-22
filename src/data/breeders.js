@@ -4,6 +4,19 @@ import podrikLogo from "../assets/logos/podrik-hamstery.png";
 export const breedersData = [
   {
     id: 1,
+    name: "Podrik Hamstery",
+    owners: "Marta Jesariew",
+    city: "Wrocław",
+    specialization: "Chomik syryjski",
+    logo: podrikLogo,
+    socials: {
+      facebook: "https://www.facebook.com/PodrikHamstery",
+      mail: "mailto:podrik@gmail.com",
+      website: "https://podrikhamstery.weebly.com/",
+    },
+  },
+  {
+    id: 2,
     name: "Preety Fluffy Hamstery",
     owners: "Kamil Pokorski i Małgorzata Metryka",
     city: "Wrocław",
@@ -13,19 +26,6 @@ export const breedersData = [
       facebook: "https://www.facebook.com/prettyfluffyhamstery",
       instagram: "https://www.instagram.com/prettyfluffyhamstery/",
       mail: "mailto:prettyfluffyhamstery@gmail.com",
-    },
-  },
-  {
-    id: 2,
-    name: "Podrik Hamstery",
-    owners: "Marta Jesariew",
-    city: "Brzezina pod Wrocławiem",
-    specialization: "Chomik syryjski",
-    logo: podrikLogo,
-    socials: {
-      facebook: "https://www.facebook.com/PodrikHamstery",
-      mail: "mailto:podrik@gmail.com",
-      website: "https://podrikhamstery.weebly.com/",
     },
   },
 ];

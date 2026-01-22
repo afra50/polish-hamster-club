@@ -1,0 +1,81 @@
+@use '../variables' as *;
+
+.not-found-page {
+    position: relative;
+    min-height: 80vh; // Żeby zajmowało większość ekranu
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $pure-white;
+    overflow: hidden;
+    padding: 2rem;
+    text-align: center;
+
+    &__container {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    // Wielki napis w tle
+    &__bg-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $font-body;
+        font-weight: 900;
+        font-size: clamp(10rem, 30vw, 20rem);
+        color: rgba($black, 0.05); // Bardzo delikatny szary
+        z-index: -1;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    &__image-wrapper {
+        margin-bottom: 2rem;
+
+        img {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            // Opcjonalnie: lekka animacja pływania
+            animation: float 6s ease-in-out infinite;
+        }
+    }
+
+    &__title {
+        font-family: $font-heading; // Cormorant
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: $color-first; // Morski kolor
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    &__text {
+        font-family: $font-body;
+        font-size: 1.1rem;
+        color: $color-second; // Szary tekst
+        margin-bottom: 2.5rem;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+// Prosta animacja unoszenia obrazka
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import heroBreeders from "../../assets/hero-breeders.jpg";
 import WaveBigCurve from "../ui/WaveBigCurve";
-import "../../styles/components/breeders/breedersHero.scss";
 
 export default function BreedersHero() {
   return (
