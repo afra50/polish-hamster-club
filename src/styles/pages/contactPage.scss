@@ -1,6 +1,7 @@
 @use "../variables" as *;
 .page-contact {
 	padding: 120px 0 160px;
+	background-color: $white;
 }
 .header-contact {
 	max-width: 520px;
@@ -28,13 +29,17 @@
 }
 
 .contact-icon {
-	flex-shrink: 0;
-	width: 32px;
-	height: 32px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 18px;
+	width: 48px;
+	height: 48px;
+	background-color: $color-first;
+	border-radius: 50%;
+	text-align: center;
+	align-content: center;
+	svg {
+		position: relative;
+		bottom: -3px;
+		color: $white;
+	}
 }
 
 .contact-text {
