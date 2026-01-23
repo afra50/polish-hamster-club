@@ -3,7 +3,14 @@
 	margin: 0;
 	padding: 0;
 }
-
+p {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	unicode-bidi: isolate;
+}
 .page-contact {
 	// min-height: 60vh;
 	padding-block: clamp(2.5rem, 5vw, 3.5rem);
@@ -13,4 +20,83 @@
 
 .contact {
 	text-decoration: dashed;
+}
+.page-contact .contact-grid {
+	grid-gap: clamp(16px, 2.2vw, 28px);
+	display: grid;
+	gap: clamp(16px, 2.2vw, 28px);
+	grid-template-columns: 1.3fr 0.9fr;
+	margin: 0 auto;
+	max-width: 1100px;
+	padding: 0 20px;
+}
+section {
+	display: block;
+	unicode-bidi: isolate;
+}
+.page-contact .card {
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	padding: clamp(20px, 2vw, 28px);
+}
+.page-contact .contact-grid .form-field {
+	margin-bottom: 0.5rem;
+}
+.form-field {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(4px, 0.6vw, 8px);
+}
+div {
+	display: block;
+	unicode-bidi: isolate;
+}
+.input,
+.select,
+.textarea {
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	outline: none;
+	padding: clamp(10px, 1.1vw, 14px) clamp(12px, 1.2vw, 16px);
+	transition:
+		border-color 0.15s ease,
+		box-shadow 0.15s ease,
+		background-color 0.15s ease;
+	width: 100%;
+}
+button,
+input,
+select,
+textarea {
+	color: #212121;
+	font-family:
+		Open Sans,
+		sans-serif;
+	font-size: clamp(15px, 1.05vw, 16px);
+}
+input:not(
+	[type="image" i],
+	[type="range" i],
+	[type="checkbox" i],
+	[type="radio" i]
+) {
+	overflow-clip-margin: 0px !important;
+	overflow: clip !important;
+}
+input:not(
+	[type="image" i],
+	[type="range" i],
+	[type="checkbox" i],
+	[type="radio" i]
+) {
+	overflow-clip-margin: 0px !important;
+	overflow: clip !important;
+}
+.form-error {
+	color: #d32f2f;
+	line-height: clamp(16px, 1.2vw, 18px);
+	min-height: clamp(16px, 1.2vw, 18px);
+}
+.form-error {
+	font-size: clamp(11px, 0.9vw, 12px);
 }
