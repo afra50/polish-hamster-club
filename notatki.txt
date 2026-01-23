@@ -1,0 +1,2 @@
+wyrownanie do lewej ipady - wymogi hodowli
+-2px na fali pod banerem o klubie zamiast -1px?
