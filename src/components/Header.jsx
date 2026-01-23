@@ -46,27 +46,27 @@ export default function Header() {
           <nav className="header__nav">
             <ul className="header__nav-list">
               <li>
-                <NavLink to="/about" onClick={closeMenu}>
+                <NavLink to="/o-nas" onClick={closeMenu}>
                   O klubie
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/knowledge" onClick={closeMenu}>
+                <NavLink to="/wiedza" onClick={closeMenu}>
                   Baza wiedzy
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/breeders" onClick={closeMenu}>
+                <NavLink to="/hodowcy" onClick={closeMenu}>
                   Nasi hodowcy
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/events" onClick={closeMenu}>
+                <NavLink to="/wydarzenia" onClick={closeMenu}>
                   Wystawy i Wydarzenia
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" onClick={closeMenu}>
+                <NavLink to="/kontakt" onClick={closeMenu}>
                   Kontakt
                 </NavLink>
               </li>
@@ -74,7 +74,7 @@ export default function Header() {
           </nav>
 
           <div className="header__cta">
-            <Button to="/join" variant="primary" onClick={closeMenu}>
+            <Button to="/dolacz" variant="primary" onClick={closeMenu}>
               Dołącz do nas
             </Button>
           </div>
