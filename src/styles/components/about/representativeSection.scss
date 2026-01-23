@@ -66,8 +66,8 @@
     position: relative;
     z-index: 2;
 
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
 
     // ZAMIANA: zamiast pełnego koloru – transparentny
@@ -99,7 +99,7 @@
 
       .circle--2 {
         width: 8.5rem;
-        left: -5%;
+        left: 0%;
       }
 
       .circle--3 {
@@ -108,8 +108,8 @@
     }
 
     &__icon {
-      width: 6rem;
-      height: 6rem;
+      width: 6.5rem;
+      height: 6.5rem;
 
       svg {
         width: 2.5rem;

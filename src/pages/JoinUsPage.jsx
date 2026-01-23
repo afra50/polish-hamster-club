@@ -1,8 +1,9 @@
 import React from "react";
-import { Check, FileText, PenTool, CreditCard, Send } from "lucide-react";
+import { FileText, PenTool, CreditCard, Send, Download } from "lucide-react";
 // Zakładam, że te komponenty masz w tych ścieżkach
-import Button from "../components/ui/Button";
 import WaveAsymmetricDip from "../components/ui/WaveAsymmetricDip";
+import WaveDoubleCurve from "../components/ui/WaveDoubleCurve";
+
 import "../styles/pages/joinUsPage.scss";
 
 export default function JoinUsPage() {
@@ -21,100 +22,18 @@ export default function JoinUsPage() {
       </section>
 
       {/* --- 2. SEKCKA "WSTĘGA" (Turkusowe tło + Białe fale + Karty) --- */}
-      <section className="membership-section">
+      <section className="join-process-section">
         {/* FALA GÓRNA (Biała - maskuje przejście z białego nagłówka) */}
-        <div className="membership-section__wave-top">
+        <div className="join-process-section__wave-top">
           <WaveAsymmetricDip className="ui-wave--white" />
         </div>
 
-        <div className="membership-section__container">
-          <div className="membership-intro">
-            <h2>Rodzaje Członkostwa</h2>
+        <div className="join-process-section__container">
+          <div className="join-process-intro">
+            <h2>Proces rejestracji</h2>
           </div>
-
-          <div className="plans-grid">
-            {/* KARTA 1: HODOWCA */}
-            <div className="plan-card plan-card--primary">
-              <div className="plan-card__header">
-                <h3>Członek Zwyczajny (Hodowca)</h3>
-              </div>
-              <ul className="plan-card__features">
-                <li>
-                  <Check size={20} /> Czynne i bierne prawo wyborcze
-                </li>
-                <li>
-                  <Check size={20} /> Rejestracja przydomka hodowlanego
-                </li>
-                <li>
-                  <Check size={20} /> Wydawanie rodowodów klubowych
-                </li>
-                <li>
-                  <Check size={20} /> Dostęp do zamkniętej Strefy Hodowcy
-                </li>
-                <li>
-                  <Check size={20} /> Bezpłatny udział w webinarach
-                  specjalistycznych
-                </li>
-              </ul>
-              <div className="plan-card__footer">
-                <Button
-                  to="/dokumenty"
-                  variant="outline"
-                  className="full-width"
-                >
-                  Szczegóły i deklaracja →
-                </Button>
-              </div>
-            </div>
-
-            {/* KARTA 2: MIŁOŚNIK */}
-            <div className="plan-card">
-              <div className="plan-card__header">
-                <h3>Członek Wspierający (Miłośnik)</h3>
-              </div>
-              <ul className="plan-card__features">
-                <li>
-                  <Check size={20} /> Wsparcie statutowej działalności Klubu
-                </li>
-                <li>
-                  <Check size={20} /> Dostęp do bazy materiałów edukacyjnych
-                </li>
-                <li>
-                  <Check size={20} /> Newsletter i zniżki na wydarzenia otwarte
-                </li>
-                <li>
-                  <Check size={20} /> Udział w spotkaniach integracyjnych
-                </li>
-                <li>
-                  <Check size={20} /> Możliwość konsultacji z ekspertami
-                </li>
-              </ul>
-              <div className="plan-card__footer">
-                <Button
-                  to="/dokumenty"
-                  variant="outline"
-                  className="full-width"
-                >
-                  Szczegóły i deklaracja →
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* FALA DOLNA (Biała - maskuje przejście do białej sekcji kroków) */}
-        <div className="membership-section__wave-bottom">
-          <WaveAsymmetricDip className="ui-wave--white" />
-        </div>
-      </section>
-
-      {/* --- 3. PROCES I PLIKI (Ikony + Linki PDF) --- */}
-      <section className="steps-section">
-        <div className="steps-section__container">
-          <h2>Proces rejestracji i dokumenty</h2>
 
           <div className="steps-grid">
-            {/* Krok 1 */}
             <div className="step-item">
               <div className="step-item__icon">
                 <FileText size={32} />
@@ -124,55 +43,141 @@ export default function JoinUsPage() {
                 Przeczytaj Statut, aby poznać nasze wartości i zasady etyczne.
               </p>
               <a href="/pliki/statut.pdf" className="file-link" download>
-                Statut Klubu 2024 (PDF)
+                Statut Klubu (PDF)
               </a>
             </div>
 
-            {/* Krok 2 */}
             <div className="step-item">
               <div className="step-item__icon">
                 <PenTool size={32} />
               </div>
               <h3>2. Wypełnij deklarację</h3>
-              <p>
-                Pobierz odpowiedni formularz, wydrukuj go i czytelnie wypełnij.
-              </p>
+              <p>Pobierz formularz i wypełnij go czytelnie.</p>
               <a href="/pliki/deklaracja.pdf" className="file-link" download>
-                Deklaracja Członkowska (PDF)
+                Deklaracja członkowska (PDF)
               </a>
             </div>
 
-            {/* Krok 3 */}
             <div className="step-item">
               <div className="step-item__icon">
                 <CreditCard size={32} />
               </div>
               <h3>3. Opłać składkę</h3>
               <p>
-                Opłać składkę roczną na konto:
-                <br />
-                <strong>BANK XXXXXX</strong>
-                <br />
-                00 0000 0000 0000
+                Dokonaj opłaty składki zgodnie z informacjami w regulaminie.
               </p>
             </div>
 
-            {/* Krok 4 */}
             <div className="step-item">
               <div className="step-item__icon">
                 <Send size={32} />
               </div>
               <h3>4. Wyślij zgłoszenie</h3>
               <p>
-                Skan deklaracji i potwierdzenie przelewu wyślij na:
+                Prześlij komplet dokumentów na adres:
                 <br />
                 <strong>biuro@klubchomika.pl</strong>
               </p>
             </div>
           </div>
+        </div>
 
-          <div className="steps-note">
-            Weryfikacja zgłoszenia trwa zazwyczaj do 14 dni roboczych.
+        {/* FALA DOLNA (Biała - maskuje przejście do białej sekcji kroków) */}
+        <div className="join-process-section__wave-bottom">
+          <WaveAsymmetricDip className="ui-wave--white" />
+        </div>
+      </section>
+
+      {/* --- 3. WYMOGI I ZAŁOŻENIA --- */}
+      <section className="join-requirements">
+        <div className="join-requirements__container">
+          <h2>Wymogi i założenia hodowli zrzeszonych w Klubie</h2>
+
+          <div className="requirements-grid">
+            <div className="requirement-card">
+              <h3>Dobrostan zwierząt</h3>
+              <ul>
+                <li>
+                  Zapewnienie odpowiednich warunków bytowych dla danego gatunku
+                </li>
+                <li>Dbałość o zdrowie, żywienie i bezpieczeństwo zwierząt</li>
+                <li>Humanitarne postępowanie na każdym etapie hodowli</li>
+              </ul>
+            </div>
+
+            <div className="requirement-card">
+              <h3>Odpowiedzialna hodowla</h3>
+              <ul>
+                <li>Kontrolowana liczba miotów, zgodna z dobrymi praktykami</li>
+                <li>Wydawanie zwierząt w odpowiednim wieku</li>
+                <li>Świadomy dobór par hodowlanych</li>
+              </ul>
+            </div>
+
+            <div className="requirement-card">
+              <h3>Wiedza i etyka</h3>
+              <ul>
+                <li>
+                  Szczegółowa wiedza z zakresu genetyki i behawioru gryzoni
+                </li>
+                <li>Znajomość zasad etycznej sprzedaży zwierząt</li>
+                <li>Gotowość do przestrzegania standardów Klubu</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="requirements-note">
+            Szczegółowe zasady znajdują się w dokumentach klubowych.
+          </div>
+        </div>
+      </section>
+
+      {/* --- 4. DOKUMENTY DO POBRANIA --- */}
+      <section className="join-documents">
+        {/* GÓRNA FALA – INNA DLA ODMIANY */}
+        <div className="join-documents__wave-top">
+          <WaveDoubleCurve className="ui-wave--white" />
+        </div>
+
+        <div className="join-documents__container">
+          <h2>Dokumenty do pobrania</h2>
+
+          <div className="documents-grid">
+            <a href="/pliki/deklaracja.pdf" download className="document-tile">
+              <div className="document-tile__left">
+                <FileText size={28} />
+                <span>Deklaracja członkowska</span>
+              </div>
+
+              <Download className="document-tile__download" size={20} />
+            </a>
+
+            <a href="/pliki/regulamin.pdf" download className="document-tile">
+              <div className="document-tile__left">
+                <FileText size={28} />
+                <span>Regulamin hodowli</span>
+              </div>
+
+              <Download className="document-tile__download" size={20} />
+            </a>
+
+            <a href="/pliki/karta-miotu.pdf" download className="document-tile">
+              <div className="document-tile__left">
+                <FileText size={28} />
+                <span>Karta miotu</span>
+              </div>
+
+              <Download className="document-tile__download" size={20} />
+            </a>
+
+            <a href="/pliki/przydomek.pdf" download className="document-tile">
+              <div className="document-tile__left">
+                <FileText size={28} />
+                <span>Wniosek o przydomek</span>
+              </div>
+
+              <Download className="document-tile__download" size={20} />
+            </a>
           </div>
         </div>
       </section>
