@@ -1,65 +1,101 @@
 @use "../variables" as *;
 
 .page-contact {
-	padding: 120px 0 160px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	padding: 7rem 9rem;
 	background-color: $white;
 
-	.header-contact {
-		max-width: 520px;
-		margin-left: 120px;
-		margin-bottom: 48px;
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
+	.page-contact-inner {
+		max-width: 520px; // szerokość tekstu
+		margin-right: auto; // pcha w lewo
+		margin-left: 0; // NIE centruj
+		.header-contact {
+			max-width: 520px;
 
-		.hero-contact {
-			font-family: $font-accent;
-			color: $color-first;
-		}
-	}
-	.contact-fonts {
-		margin-left: 120px;
-		margin-top: 32px;
-
-		.contact-container {
-			max-width: 360px;
+			margin-bottom: 48px;
 			display: flex;
 			flex-direction: column;
-			gap: 16px;
+			gap: 20px;
 
-			.contact-row {
+			.hero-contact {
+				font-family: $font-accent;
+				color: $color-first;
+			}
+		}
+		.contact-fonts {
+			margin-top: 32px;
+
+			.contact-container {
+				max-width: 360px;
 				display: flex;
-				align-items: center;
+				flex-direction: column;
 				gap: 16px;
 
-				.contact-icon {
-					width: 48px;
-					height: 48px;
-					background-color: $color-first;
-					border-radius: 50%;
-					text-align: center;
-					align-content: center;
-					svg {
-						position: relative;
-						bottom: -3px;
-						color: $white;
-					}
-				}
-				.contact-text {
+				.contact-row {
 					display: flex;
-					flex-direction: column;
-					gap: 2px;
+					align-items: center;
+					gap: 16px;
 
-					.contact-label {
-						font-size: 12px;
-						opacity: 0.7;
+					.contact-icon {
+						width: 48px;
+						height: 48px;
+						background-color: $color-first;
+						border-radius: 50%;
+						text-align: center;
+						align-content: center;
+						svg {
+							position: relative;
+							bottom: -3px;
+							color: $white;
+						}
 					}
-					.contact-value {
-						font-size: 16px;
-						font-weight: 500;
+					.contact-text {
+						display: flex;
+						flex-direction: column;
+						gap: 2px;
+
+						.contact-label {
+							font-size: 12px;
+							opacity: 0.7;
+						}
+						.contact-value {
+							font-size: 16px;
+							font-weight: 500;
+						}
 					}
 				}
 			}
 		}
+	}
+}
+/* ===============================
+   Desktop ↓
+   =============================== */
+@media (max-width: 1200px) {
+	.page-contact {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+}
+
+@media (max-width: 768px) {
+	.page-contact {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+}
+
+/* ===============================
+   Mobile ↓
+   =============================== */
+@media (max-width: 480px) {
+	.page-contact {
+		padding: 3rem 2rem;
+	}
+
+	.page-contact-inner {
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
