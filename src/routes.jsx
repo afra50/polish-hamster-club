@@ -6,6 +6,7 @@ import BreedersPage from "./pages/BreedersPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import JoinUsPage from "./pages/JoinUsPage";
 import ContactPage from "./pages/ContactPage";
+import BuildPage from "./pages/BuildPage";
 
 const routes = [
   {
@@ -27,6 +28,10 @@ const routes = [
   {
     path: "/kontakt",
     element: <ContactPage />,
+  },
+  {
+    path: "/wiedza",
+    element: <BuildPage />,
   },
   { path: "*", element: <NotFoundPage /> },
 ];

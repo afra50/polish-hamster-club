@@ -1,15 +1,15 @@
 @use "../variables" as *;
 
 .page-contact {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
 	padding: 7rem 9rem;
 	background-color: $white;
+	min-height: 70vh;
 
 	.page-contact-inner {
 		max-width: 520px; // szerokość tekstu
 		margin-right: auto; // pcha w lewo
 		margin-left: 0; // NIE centruj
+
 		.header-contact {
 			max-width: 520px;
 
@@ -23,6 +23,7 @@
 				color: $color-first;
 			}
 		}
+
 		.contact-fonts {
 			margin-top: 32px;
 
@@ -44,12 +45,14 @@
 						border-radius: 50%;
 						text-align: center;
 						align-content: center;
+
 						svg {
 							position: relative;
 							bottom: -3px;
 							color: $white;
 						}
 					}
+
 					.contact-text {
 						display: flex;
 						flex-direction: column;
@@ -59,6 +62,7 @@
 							font-size: 12px;
 							opacity: 0.7;
 						}
+
 						.contact-value {
 							font-size: 16px;
 							font-weight: 500;
@@ -69,29 +73,22 @@
 		}
 	}
 }
-/* ===============================
-   Desktop ↓
-   =============================== */
-@media (max-width: 1200px) {
+
+
+@media (max-width: 1024px) {
 	.page-contact {
-		padding-left: 48px;
-		padding-right: 48px;
+		padding: 4rem 5rem;
 	}
 }
 
-@media (max-width: 768px) {
-	.page-contact {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
-}
-
-/* ===============================
-   Mobile ↓
-   =============================== */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 	.page-contact {
 		padding: 3rem 2rem;
+		text-align: center;
+
+		.contact-container {
+			align-items: center;
+		}
 	}
 
 	.page-contact-inner {
