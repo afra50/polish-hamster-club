@@ -1,63 +1,65 @@
 @use "../variables" as *;
+
 .page-contact {
 	padding: 120px 0 160px;
 	background-color: $white;
-}
-.header-contact {
-	max-width: 520px;
-	margin-left: 120px;
-	margin-bottom: 48px;
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-}
-.contact-container {
-	max-width: 360px;
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-}
-.contact-fonts {
-	margin-left: 120px;
-	margin-top: 32px;
-}
 
-.contact-row {
-	display: flex;
-	align-items: center;
-	gap: 16px;
-}
+	.header-contact {
+		max-width: 520px;
+		margin-left: 120px;
+		margin-bottom: 48px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
 
-.contact-icon {
-	width: 48px;
-	height: 48px;
-	background-color: $color-first;
-	border-radius: 50%;
-	text-align: center;
-	align-content: center;
-	svg {
-		position: relative;
-		bottom: -3px;
-		color: $white;
+		.hero-contact {
+			font-family: $font-accent;
+			color: $color-first;
+		}
 	}
-}
+	.contact-fonts {
+		margin-left: 120px;
+		margin-top: 32px;
 
-.contact-text {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-}
+		.contact-container {
+			max-width: 360px;
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
 
-.contact-label {
-	font-size: 12px;
-	opacity: 0.7;
-}
+			.contact-row {
+				display: flex;
+				align-items: center;
+				gap: 16px;
 
-.contact-value {
-	font-size: 16px;
-	font-weight: 500;
-}
-.hero-contact {
-	font-family: $font-accent;
-	color: $color-first;
+				.contact-icon {
+					width: 48px;
+					height: 48px;
+					background-color: $color-first;
+					border-radius: 50%;
+					text-align: center;
+					align-content: center;
+					svg {
+						position: relative;
+						bottom: -3px;
+						color: $white;
+					}
+				}
+				.contact-text {
+					display: flex;
+					flex-direction: column;
+					gap: 2px;
+
+					.contact-label {
+						font-size: 12px;
+						opacity: 0.7;
+					}
+					.contact-value {
+						font-size: 16px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
 }
