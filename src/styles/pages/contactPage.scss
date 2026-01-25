@@ -1,71 +1,125 @@
 @use "../variables" as *;
 
 .page-contact {
-	padding: 7rem 9rem;
+	position: relative;
+	padding: 17rem 12rem 12rem 17rem;
 	background-color: $white;
-	min-height: 70vh;
+	min-height: 80vh;
+	overflow: hidden;
 
+	// --- FALA NA GÓRZE (Bez zmian) ---
+	.contact-wave-top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		line-height: 0;
+		z-index: 2;
+		transform: scaleY(-1);
+
+		.ui-wave--teal {
+			width: 120%;
+			left: -10%;
+			position: relative;
+			top: -1px;
+
+			path {
+				fill: $color-first !important;
+			}
+		}
+	}
+
+	// --- GŁÓWNA TREŚĆ ---
 	.page-contact-inner {
-		max-width: 520px; // szerokość tekstu
-		margin-right: auto; // pcha w lewo
-		margin-left: 0; // NIE centruj
+		position: relative;
+		z-index: 10;
+		max-width: 600px;
+		margin-right: auto;
+		margin-left: 0;
 
 		.header-contact {
 			max-width: 520px;
-
-			margin-bottom: 48px;
+			margin-bottom: 64px;
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 20px; // Trochę mniejszy odstęp (było 24)
 
 			.hero-contact {
-				font-family: $font-accent;
+				font-family: $font-heading;
 				color: $color-first;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 0.875rem; // ZMIANA: Dodano wielkość (14px)
+			}
+
+			h1.contact-heading {
+				font-family: $font-heading;
+				// ZMIANA: Mniejszy zakres (od 2rem do 3rem)
+				font-size: clamp(2rem, 4vw, 3rem);
+				color: $black;
+				line-height: 1.1;
+			}
+
+			p {
+				color: $color-second;
+				line-height: 1.6;
+				font-size: 1rem; // ZMIANA: Zmniejszono z 1.1rem (16px)
 			}
 		}
 
 		.contact-fonts {
-			margin-top: 32px;
+			margin-top: 56px;
 
 			.contact-container {
-				max-width: 360px;
+				max-width: 400px;
 				display: flex;
 				flex-direction: column;
-				gap: 16px;
+				gap: 32px; // ZMIANA: Nieco mniejszy odstęp (było 40px)
 
 				.contact-row {
 					display: flex;
 					align-items: center;
-					gap: 16px;
+					gap: 16px; // ZMIANA: Mniejszy odstęp ikona-tekst (było 20px)
 
 					.contact-icon {
+						// ZMIANA: Zmniejszono ikony (z 56px na 48px)
 						width: 48px;
 						height: 48px;
 						background-color: $color-first;
 						border-radius: 50%;
-						text-align: center;
-						align-content: center;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex-shrink: 0;
+						box-shadow: 0 4px 12px rgba($color-first, 0.2);
 
 						svg {
-							position: relative;
-							bottom: -3px;
 							color: $white;
+							// ZMIANA: Mniejsza ikona w środku (z 28px na 24px)
+							width: 24px;
+							height: 24px;
 						}
 					}
 
 					.contact-text {
 						display: flex;
 						flex-direction: column;
-						gap: 2px;
+						gap: 2px; // ZMIANA: Mniejszy odstęp etykieta-wartość
 
 						.contact-label {
-							font-size: 12px;
-							opacity: 0.7;
+							font-size: 12px; // ZMIANA: Zmniejszono z 13px
+							opacity: 0.8;
+							text-transform: uppercase;
+							letter-spacing: 0.5px;
+							font-weight: 600;
+							color: $color-first;
 						}
 
 						.contact-value {
-							font-size: 16px;
+							font-size: 16px; // ZMIANA: Zmniejszono z 18px
 							font-weight: 500;
+							color: $black;
 						}
 					}
 				}
@@ -74,25 +128,43 @@
 	}
 }
 
-
+// MEDIA QUERIES (Drobne korekty paddingów)
 @media (max-width: 1024px) {
 	.page-contact {
-		padding: 4rem 5rem;
+		padding: 14rem 6rem 8rem 6rem;
 	}
 }
 
 @media (max-width: 767px) {
 	.page-contact {
-		padding: 3rem 2rem;
+		padding: 12rem 2rem 5rem 2rem;
 		text-align: center;
 
-		.contact-container {
+		.page-contact-inner {
+			margin-left: auto;
+			margin-right: auto;
 			align-items: center;
-		}
-	}
 
-	.page-contact-inner {
-		margin-left: 0;
-		margin-right: 0;
+			.header-contact {
+				align-items: center;
+			}
+
+			.contact-fonts .contact-container {
+				margin: 0 auto;
+				align-items: flex-start;
+
+				@media (max-width: 480px) {
+					align-items: center;
+					text-align: center;
+				}
+
+				.contact-row {
+					@media (max-width: 480px) {
+						flex-direction: column;
+						gap: 10px;
+					}
+				}
+			}
+		}
 	}
 }

@@ -1,56 +1,66 @@
 import React from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import WaveAsymmetricDip from "../components/ui/WaveAsymmetricDip";
+// Importujemy nowy komponent
+import DecorativeBlobs from "../components/ui/DecorativeBlobs";
 import "../styles/pages/contactPage.scss";
-import { Mail } from "lucide-react";
-import { Phone } from "lucide-react";
-import { MapPin } from "lucide-react";
+
 export default function ContactPage() {
-	return (
-		<main className="page-contact">
-			<div className="page-contact-inner">
-				<header className="header-contact">
-					<div className="hero-contact">Jesteśmy tu dla Ciebie</div>
-					<h1 className="contact-heading">Skontaktuj się z nami</h1>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio
-						recusandae doloribus molestias beatae eius rem sed ducimus eaque
-						natus. Aliquam reiciendis nemo reprehenderit quos cumque dolore
-						aliquid tempora aspernatur minima.
-					</p>
-				</header>
-				<section className="contact-fonts">
-					<div className="contact-container">
-						<div className="contact-row">
-							<div className="contact-icon">
-								<Mail />
-							</div>
-							<div className="contact-text">
-								<div className="contact-label">e-mail</div>
-								<div clasNames="contact-value">chrum@kwik.pl</div>
-							</div>
-						</div>
+  return (
+    <main className="page-contact">
+      {/* --- FALA NA GÓRZE --- */}
+      <div className="contact-wave-top">
+        <WaveAsymmetricDip className="ui-wave--teal" />
+      </div>
 
-						<div className="contact-row">
-							<div className="contact-icon">
-								<Phone />
-							</div>
-							<div className="contact-text">
-								<div className="contact-label">Telefon</div>
-								<div className="contact-value">+48 123 456 789</div>
-							</div>
-						</div>
+      {/* --- NOWY KOMPONENT Z BLOBAMI --- */}
+      <DecorativeBlobs />
 
-						<div className="contact-row">
-							<div className="contact-icon">
-								<MapPin />
-							</div>
-							<div className="contact-text">
-								<div className="contact-label">Miejscowsość</div>
-								<div className="contact-value">Chrumianki, Polska</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</main>
-	);
+      {/* --- GŁÓWNA TREŚĆ --- */}
+      <div className="page-contact-inner">
+        <header className="header-contact">
+          <div className="hero-contact">Jesteśmy tu dla Ciebie</div>
+          <h1 className="contact-heading">Skontaktuj się z nami</h1>
+          <p>
+            Masz pytania dotyczące hodowli, chcesz dołączyć do klubu lub po
+            prostu porozmawiać o chomikach? Jesteśmy do Twojej dyspozycji.
+          </p>
+        </header>
+
+        <section className="contact-fonts">
+          <div className="contact-container">
+            <div className="contact-row">
+              <div className="contact-icon">
+                <Mail />
+              </div>
+              <div className="contact-text">
+                <div className="contact-label">e-mail</div>
+                <div className="contact-value">biuro@klubchomika.pl</div>
+              </div>
+            </div>
+
+            <div className="contact-row">
+              <div className="contact-icon">
+                <Phone />
+              </div>
+              <div className="contact-text">
+                <div className="contact-label">Telefon</div>
+                <div className="contact-value">+48 123 456 789</div>
+              </div>
+            </div>
+
+            <div className="contact-row">
+              <div className="contact-icon">
+                <MapPin />
+              </div>
+              <div className="contact-text">
+                <div className="contact-label">Siedziba</div>
+                <div className="contact-value">Warszawa, Polska</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 }
