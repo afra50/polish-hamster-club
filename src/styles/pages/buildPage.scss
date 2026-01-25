@@ -1,5 +1,33 @@
 @use "../variables" as *;
 
-.build-page {
-    background-color: $white;
+.buildpage {
+	position: relative;
+	padding: 10rem 12rem 12rem 10rem;
+	background-color: $white;
+	min-height: 80vh;
+
+	.buildpage-inner {
+		position: relative;
+		max-width: 600px;
+		margin: 0 auto;
+		text-align: center;
+
+		.buildpage-png img {
+			width: 400px;
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		.buildpage-header {
+			margin-bottom: 1rem;
+			.buildpage-h {
+				color: $color-first;
+				padding-bottom: 1rem;
+			}
+			p {
+				padding-bottom: 1rem;
+			}
+		}
+	}
 }
