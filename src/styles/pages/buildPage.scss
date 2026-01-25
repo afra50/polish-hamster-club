@@ -5,6 +5,7 @@
 	padding: 10rem 12rem 12rem 10rem;
 	background-color: $white;
 	min-height: 80vh;
+	align-content: center;
 
 	.buildpage-inner {
 		position: relative;
@@ -29,5 +30,17 @@
 				padding-bottom: 1rem;
 			}
 		}
+	}
+}
+@media (max-width: 600px) {
+	.buildpage {
+		padding: 10rem 6rem 4rem 6rem;
+		text-align: center;
+	}
+}
+@media (max-width: 446px) {
+	.buildpage {
+		padding: 8rem 3rem 4rem 3rem;
+		text-align: center;
 	}
 }
