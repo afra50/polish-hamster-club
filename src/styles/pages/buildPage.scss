@@ -2,45 +2,105 @@
 
 .buildpage {
 	position: relative;
-	padding: 10rem 12rem 12rem 10rem;
+	padding: 6rem 2rem 15rem 2rem;
 	background-color: $white;
-	min-height: 80vh;
-	align-content: center;
+	min-height: 85vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 
 	.buildpage-inner {
 		position: relative;
+		z-index: 10;
 		max-width: 600px;
-		margin: 0 auto;
+		width: 100%;
 		text-align: center;
 
-		.buildpage-png img {
-			width: 400px;
-			max-width: 100%;
-			height: auto;
-			display: block;
-			margin: 0 auto;
-		}
-		.buildpage-header {
-			margin-bottom: 1rem;
-			.buildpage-h {
-				color: $color-first;
-				padding-bottom: 1rem;
+		// --- WRAPPER OBRAZKA ---
+		.buildpage-image-wrapper {
+			position: relative;
+			// Tutaj ustalamy wielkość obszaru, w którym rysują się bloby i chomik
+			width: 340px;
+			height: 340px;
+			margin: 0 auto 3rem auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			// Chomik musi być na wierzchu (z-index wyższy niż bloby w OrganicBackground)
+			.hamster-img {
+				position: relative;
+				z-index: 10;
+				width: 100%; // Dopasowanie do wielkości wrappera
+				height: auto;
+				object-fit: contain;
+				filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
 			}
+		}
+
+		.buildpage-header {
+			margin-bottom: 2.5rem;
+
+			.buildpage-h {
+				font-size: clamp(2.5rem, 5vw, 3.5rem);
+				color: $black;
+				font-weight: 600;
+				margin-bottom: 1.5rem;
+			}
+
 			p {
-				padding-bottom: 1rem;
+				font-size: 1.125rem;
+				color: $color-second;
+				line-height: 1.6;
+				margin-bottom: 1rem;
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			strong {
+				display: block;
+				color: $black;
+				font-weight: 700;
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	.buildpage-wave-bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		line-height: 0;
+		z-index: 1;
+
+		.ui-wave--teal {
+			// Ta fala jest bardzo szeroka i dynamiczna.
+			// 120% szerokości pozwoli jej ładnie "pływać" na boki przy zmianie rozmiaru okna.
+			width: 120%;
+			left: -10%;
+			position: relative;
+			bottom: -1px; // Uszczelnienie
+
+			path {
+				fill: $color-first !important;
+				opacity: 1;
 			}
 		}
 	}
 }
+
+// MEDIA QUERIES
 @media (max-width: 600px) {
 	.buildpage {
-		padding: 10rem 6rem 4rem 6rem;
-		text-align: center;
-	}
-}
-@media (max-width: 446px) {
-	.buildpage {
-		padding: 8rem 3rem 4rem 3rem;
-		text-align: center;
+		padding: 4rem 1.5rem 10rem 1.5rem;
+
+		.buildpage-inner .buildpage-image-wrapper {
+			width: 280px;
+			height: 280px;
+		}
 	}
 }

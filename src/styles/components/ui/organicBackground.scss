@@ -1,0 +1,49 @@
+@use '../../variables' as *;
+
+.organic-background-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // Musi być DUŻO większe niż chomik, żeby wystawało
+    width: 160%;
+    height: 160%;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .organic-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        // Obracamy całość, żeby uzyskać ten "dynamiczny" skos ze zdjęcia
+        transform: rotate(-15deg);
+
+        // --- WARSTWA 1 (Najjaśniejsza, Tło) ---
+        .blob-layer-1 {
+            fill: $color-first;
+            opacity: 0.1; // Bardzo jasna
+            // Przesuwamy w dół i w prawo
+            transform: scale(1.1) translate(10px, 10px);
+            transform-origin: center;
+        }
+
+        // --- WARSTWA 2 (Średnia) ---
+        .blob-layer-2 {
+            fill: $color-first;
+            opacity: 0.2;
+            transform: scale(1.2) translate(80px, 0px);
+            transform-origin: center;
+        }
+
+        // --- WARSTWA 3 (Najciemniejsza, pod chomikiem) ---
+        .blob-layer-3 {
+            fill: $color-first;
+            opacity: 0.35;
+            transform: scale(1.4) translate(-60px, 0px);
+            transform-origin: center;
+        }
+    }
+}
