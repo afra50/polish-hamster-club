@@ -1,2 +1,3 @@
-wyrownanie do lewej ipady - wymogi hodowli
--2px na fali pod banerem o klubie zamiast -1px?
+-rozdzielic dolacz i wydarzenia na komponenty
+-szczególy wystaw, jakas paginacja/slider
+

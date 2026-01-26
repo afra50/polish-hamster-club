@@ -1,6 +1,6 @@
 import React from "react";
-import { User } from "lucide-react";
 import DecorativeCircles from "../ui/DecorativeCircles";
+import kamilPhoto from "../../assets/kamil_about.jpg";
 import "../../styles/components/about/representativeSection.scss";
 
 export default function RepresentativeSection() {
@@ -13,9 +13,9 @@ export default function RepresentativeSection() {
           {/* dekoracyjne koła */}
           <DecorativeCircles />
 
-          {/* ikona */}
+          {/* zdjecie */}
           <div className="representative-visual__icon">
-            <User size={64} />
+            <img src={kamilPhoto} alt="Kamil Pokorski – Przedstawiciel Klubu" />
           </div>
         </div>
 
