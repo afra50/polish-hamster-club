@@ -12,7 +12,7 @@ export default function JoinUsPage() {
       {/* --- 1. NAGŁÓWEK (Czysty tekst, bez zdjęcia) --- */}
       <section className="join-header">
         <div className="join-header__container">
-          <h1>Dołącz do Polskiego Klubu Chomika</h1>
+          <h1>Dołącz do Polish Hamster Club</h1>
           <p>
             Tworzymy profesjonalną społeczność hodowców i miłośników. Poniżej
             znajdziesz informacje o wymogach formalnych oraz dokumenty do

@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import JoinUsPage from "./pages/JoinUsPage";
 import ContactPage from "./pages/ContactPage";
 import BuildPage from "./pages/BuildPage";
+import EventsPage from "./pages/EventsPage";
 
 const routes = [
   {
@@ -32,6 +33,10 @@ const routes = [
   {
     path: "/wiedza",
     element: <BuildPage />,
+  },
+  {
+    path: "wydarzenia",
+    element: <EventsPage />,
   },
   { path: "*", element: <NotFoundPage /> },
 ];
