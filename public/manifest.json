@@ -1,0 +1,29 @@
+{
+  "short_name": "Polish Hamster",
+  "name": "Polish Hamster Club",
+  "description": "Pasja, wiedza i etyczna hodowla. Zrzeszamy profesjonalnych hodowców i miłośników chomików w Polsce.",
+  "icons": [
+    {
+      "src": "/logo-hamster.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#008080",
+  "background_color": "#ffffff"
+}

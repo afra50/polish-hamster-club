@@ -21,7 +21,7 @@ export default function AboutIntro() {
             tellus elit, varius non commodo eget, mattis vel eros. In sed ornare
             nulla.
           </p>
-          <Button to="/about" variant="outline">
+          <Button to="/o-nas" variant="outline">
             O klubie <ArrowRight size={18} />
           </Button>
         </div>

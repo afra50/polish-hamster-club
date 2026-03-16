@@ -11,19 +11,19 @@ export default function PillarsSection() {
       icon: <BookOpen size={40} />,
       title: "Genetyka",
       desc: "Rzetelna wiedza",
-      link: "/knowledge",
+      link: "/wiedza",
     },
     {
       icon: <Award size={40} />,
       title: "Żywienie",
       desc: "Zdrowa dieta",
-      link: "/knowledge",
+      link: "/wiedza",
     },
     {
       icon: <Calendar size={40} />,
       title: "Lokum",
       desc: "Odpowiednie warunki",
-      link: "/knowledge",
+      link: "/wiedza",
     },
   ];
 
@@ -46,7 +46,7 @@ export default function PillarsSection() {
           ))}
         </div>
         <div className="pillars-section__cta">
-          <Button to="/knowledge" variant="outline-white">
+          <Button to="/wiedza" variant="outline-white">
             Baza wiedzy →
           </Button>
         </div>

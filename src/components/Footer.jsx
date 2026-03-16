@@ -26,20 +26,23 @@ export default function Footer() {
           <h4>Menu</h4>
           <ul>
             <li>
-              <Link to="/about">O klubie</Link>
+              <Link to="/o-nas">O klubie</Link>
             </li>
             <li>
-              <Link to="/breeders">Hodowle</Link>
+              <Link to="/hodowcy">Hodowle</Link>
             </li>
             <li>
-              <Link to="/knowledge">Baza wiedzy</Link>
+              <Link to="/wiedza">Baza wiedzy</Link>
             </li>
             <li>
-              <Link to="/events">Wystawy i Wydarzenia</Link>
+              <Link to="/wydarzenia">Wystawy i Wydarzenia</Link>
+            </li>
+            <li>
+              <Link to="/dolacz">Dołącz do nas</Link>
             </li>
             <li>
               {/* Kontakt przeniesiony tutaj, bo zazwyczaj jest w menu */}
-              <Link to="/contact">Kontakt</Link>
+              <Link to="/kontakt">Kontakt</Link>
             </li>
           </ul>
         </div>
@@ -50,10 +53,10 @@ export default function Footer() {
           <h4>Dokumenty</h4>
           <ul>
             <li>
-              <Link to="/statute">Statut Związku</Link>
+              <Link to="/status">Statut Związku</Link>
             </li>
             <li>
-              <Link to="/regulations">Regulamin</Link>
+              <Link to="/regulamin">Regulamin</Link>
             </li>
           </ul>
         </div>

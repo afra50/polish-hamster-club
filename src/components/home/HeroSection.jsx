@@ -26,7 +26,7 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-actions">
-              <Button to="/breeders" variant="primary">
+              <Button to="/hodowcy" variant="primary">
                 Zobacz hodowle <ArrowRight size={20} />
               </Button>
             </div>

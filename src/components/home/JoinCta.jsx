@@ -36,7 +36,7 @@ export default function JoinCta() {
             viverra ornare, eros dolor interdum nulla, ut commodo diam libero
             vitae erat.
           </p>
-          <Button to="/join" variant="primary">
+          <Button to="/dolacz" variant="primary">
             Dołącz do nas →
           </Button>
         </div>

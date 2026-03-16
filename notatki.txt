@@ -1,3 +1,5 @@
 -rozdzielic dolacz i wydarzenia na komponenty
 -szczególy wystaw, jakas paginacja/slider
-- index html, seo, podkrasc z innej strony
+-google search console, og image, favicon, logo + logo png do manifest i index
+-status, regulamin, inne papiery
+- kompresja zdjec na banery itp

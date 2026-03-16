@@ -35,7 +35,9 @@ export default function ContactPage() {
               </div>
               <div className="contact-text">
                 <div className="contact-label">e-mail</div>
-                <div className="contact-value">biuro@klubchomika.pl</div>
+                <div className="contact-value">
+                  kontakt@polishhamsterclub.pl
+                </div>
               </div>
             </div>
 
@@ -55,7 +57,7 @@ export default function ContactPage() {
               </div>
               <div className="contact-text">
                 <div className="contact-label">Siedziba</div>
-                <div className="contact-value">Warszawa, Polska</div>
+                <div className="contact-value">Wrocław, Polska</div>
               </div>
             </div>
           </div>
