@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import WaveAsymmetricDip from "../components/ui/WaveAsymmetricDip";
 // Importujemy nowy komponent
 import DecorativeBlobs from "../components/ui/DecorativeBlobs";
@@ -38,16 +38,6 @@ export default function ContactPage() {
                 <div className="contact-value">
                   kontakt@polishhamsterclub.pl
                 </div>
-              </div>
-            </div>
-
-            <div className="contact-row">
-              <div className="contact-icon">
-                <Phone />
-              </div>
-              <div className="contact-text">
-                <div className="contact-label">Telefon</div>
-                <div className="contact-value">+48 123 456 789</div>
               </div>
             </div>
 
