@@ -1,5 +1,5 @@
 import React from "react";
-import heroAbout from "../../assets/hero-about.jpg";
+import heroAbout from "../../assets/hero-about.png";
 import WaveAsymmetricDip from "../ui/WaveAsymmetricDip";
 
 export default function AboutHero() {

@@ -6,8 +6,8 @@ import WaveAsymmetricDip from "../components/ui/WaveAsymmetricDip";
 import "../styles/pages/eventsPage.scss";
 
 import heroBreeders from "../assets/hero-breeders.jpg";
-import aboutBreeder from "../assets/about-breeder.jpg";
-import hamstersGroup from "../assets/hamsters-group.png";
+import aboutBreeder from "../assets/about-breeder.webp";
+import heroHamster from "../assets/hero-hamster.jpg";
 import aboutMission from "../assets/about-mission.jpg";
 
 // --- PRZYKŁADOWE DANE (MOCK DATA) ---
@@ -38,7 +38,7 @@ const eventsData = {
       title: "Spotkanie integracyjne hodowców",
       date: "02.06.2024",
       location: "Katowice",
-      image: hamstersGroup,
+      image: heroHamster,
       type: "Spotkanie",
       link: "/archiwum/spotkanie-slask",
     },

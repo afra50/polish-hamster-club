@@ -3,3 +3,4 @@
 -google search console, og image, favicon, logo + logo png do manifest i index
 -status, regulamin, inne papiery
 - kompresja zdjec na banery itp
+- zdjecia marty zmienic na lepsza jakosc a nie z messengera

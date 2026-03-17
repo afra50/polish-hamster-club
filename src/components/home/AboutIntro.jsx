@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Button from "../ui/Button";
-import aboutImg from "../../assets/about-breeder.jpg";
+import aboutImg from "../../assets/about-breeder.webp";
 
 export default function AboutIntro() {
   return (
@@ -28,7 +28,7 @@ export default function AboutIntro() {
 
         {/* Kolumna 2: Zdjęcie */}
         <div className="about-intro__image">
-          <img src={aboutImg} alt="Hodowcy z chomikami" />
+          <img src={aboutImg} alt="Chomik dżungarski" />
         </div>
       </div>
     </section>
