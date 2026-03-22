@@ -21,12 +21,14 @@
         align-items: center;
         gap: 12px;
         text-decoration: none;
-        // Ważne: Logo musi być na wierzchu, żeby kliknąć je przy otwartym menu (opcjonalne)
         position: relative;
         z-index: 102;
 
-        &-icon {
-            font-size: 2rem;
+        // ZMIANA: Nowa klasa dla obrazka
+        &-img {
+            width: 45px; // Ustaw rozmiar odpowiedni dla nagłówka
+            height: auto;
+            display: block;
         }
 
         &-text {
@@ -46,16 +48,16 @@
 
     // --- BURGER BUTTON (MOBILE ONLY) ---
     &__burger {
-        display: none; // Domyślnie ukryty na desktopie
+        display: none;
         background: none;
         border: none;
         cursor: pointer;
         color: $black;
-        z-index: 102; // Musi być nad menu mobilnym
+        z-index: 102;
         padding: 5px;
 
         @media (max-width: 900px) {
-            display: block; // Pokazujemy na mobile
+            display: block;
         }
     }
 
@@ -78,12 +80,9 @@
             align-items: center;
             gap: 40px;
             z-index: 101;
-
-            // Animacja wjazdu
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
 
-            // Klasa dodawana przez Reacta
             &.open {
                 transform: translateX(0);
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
@@ -112,7 +111,7 @@
             text-decoration: none;
 
             @media (max-width: 900px) {
-                font-size: 1.5rem; // Większe linki na telefonie
+                font-size: 1.5rem;
             }
 
             &:hover,

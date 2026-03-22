@@ -20,9 +20,9 @@ export default function HeroSection() {
             <span className="accent-surtitle">Polish Hamster Club</span>
             <h1>Rozwijamy standardy etycznej hodowli.</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              sed diam eget risus varius blandit sit amet non magna. Cras mattis
-              consectetur purus sit amet fermentum.
+              Nasze hodowle funkcjonują zgodnie z najwyższymi standardami opieki
+              nad zwierzętami oraz współpracują z renomowanymi hodowcami z całej
+              Europy. Zachęcamy do zapoznania się z listą naszych członków.
             </p>
 
             <div className="hero-actions">

@@ -64,12 +64,11 @@
 
     // --- KOLUMNA BRANDOWA (Pierwsza kolumna) ---
     &__brand {
-        flex: 2; // Na desktopie zajmuje 2x więcej miejsca niż listy linków (lepszy balans)
+        flex: 2;
 
-        // Na mobile wraca do normalnego rozmiaru i środkowania
         @media (max-width: 900px) {
             flex: auto;
-            margin-bottom: 2rem; // Dodatkowy odstęp od reszty linków
+            margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -80,7 +79,7 @@
             color: rgba($white, 0.5);
             line-height: 1.6;
             font-size: 0.9rem;
-            max-width: 300px; // Żeby tekst copyright nie był za szeroki na dużym ekranie
+            max-width: 300px;
         }
     }
 
@@ -88,15 +87,21 @@
     &__logo {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 15px; // Nieznacznie zwiększony odstęp dla lepszego oddechu
         text-decoration: none;
         color: $white;
-        font-family: $font-heading; // Upewnij się, że masz tę zmienną
+        font-family: $font-heading;
         font-size: 1.5rem;
         font-weight: 700;
+        transition: 0.2s all ease;
 
-        &-icon {
-            font-size: 2rem;
+        // ZMIANA: Nowa klasa dla obrazka
+        &-img {
+            width: 50px; // Możesz dostosować tę wartość (np. 40px lub 60px)
+            height: auto; // Zachowuje proporcje
+            display: block; // Usuwa dziwne odstępy pod obrazkiem
+            // opcjonalnie: jeśli logo jest za jasne na czarnym tle:
+            // filter: brightness(0.9); 
         }
 
         &:hover {

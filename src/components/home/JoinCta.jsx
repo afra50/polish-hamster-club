@@ -31,10 +31,10 @@ export default function JoinCta() {
             etycznej hodowli.
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
+            Dołącz do nas i twórz razem z nami społeczność ludzi, którym
+            naprawdę zależy na zdrowiu, dobrostanie i przyszłości zwierząt.
+            Razem możemy więcej - wymieniaj się doświadczeniem, zdobywaj wiedzę
+            i rozwijaj swoją pasję wśród osób z podobnymi aspiracjami.
           </p>
           <Button to="/dolacz" variant="primary">
             Dołącz do nas →

@@ -8,10 +8,15 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        {/* Kolumna 1: Brand (Bez zmian) */}
+        {/* Kolumna 1: Brand (Zmieniona ikona na obrazek) */}
         <div className="footer__col footer__brand">
           <Link to="/" className="footer__logo">
-            <span className="footer__logo-icon">🐹</span>
+            {/* ZMIANA: Dodajemy tag img zamiast emoji */}
+            <img
+              src="/logo.png"
+              alt="Logo Polish Hamster Club"
+              className="footer__logo-img"
+            />
             <span>Polish Hamster Club</span>
           </Link>
           <p>
@@ -21,7 +26,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Kolumna 2: Menu (Jak w headerze) */}
+        {/* Kolumna 2: Menu (Bez zmian) */}
         <div className="footer__col">
           <h4>Menu</h4>
           <ul>
@@ -41,22 +46,32 @@ export default function Footer() {
               <Link to="/dolacz">Dołącz do nas</Link>
             </li>
             <li>
-              {/* Kontakt przeniesiony tutaj, bo zazwyczaj jest w menu */}
               <Link to="/kontakt">Kontakt</Link>
             </li>
           </ul>
         </div>
 
-        {/* Kolumna 3: Pliki / Dokumenty */}
+        {/* Kolumna 3: Pliki / Dokumenty (Bez zmian) */}
         <div className="footer__col">
-          {/* Nazwałem to "Dokumenty", brzmi lepiej w stopce niż "Pliki" */}
           <h4>Dokumenty</h4>
           <ul>
             <li>
-              <Link to="/status">Statut Związku</Link>
+              <a
+                href="/pliki/statut.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Statut Związku
+              </a>
             </li>
             <li>
-              <Link to="/regulamin">Regulamin</Link>
+              <a
+                href="/pliki/regulamin.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Regulamin
+              </a>
             </li>
           </ul>
         </div>

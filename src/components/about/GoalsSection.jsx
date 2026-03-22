@@ -24,7 +24,7 @@ export default function GoalsSection() {
               </span>
               <div className="goal-item__content">
                 <h3>Stworzenie standardu hodowli</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
               </div>
             </div>
             <div className="goal-item">
@@ -33,9 +33,9 @@ export default function GoalsSection() {
               </span>
               <div className="goal-item__content">
                 <h3>Edukacja nowych właścicieli</h3>
-                <p>
+                {/* <p>
                   Integer posuere erat a ante venenatis dapibus posuere velit.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function GoalsSection() {
               </span>
               <div className="goal-item__content">
                 <h3>Wsparcie i rozwój hodowców</h3>
-                <p>Aenean lacinia bibendum nulla sed consectetur.</p>
+                {/* <p>Aenean lacinia bibendum nulla sed consectetur.</p> */}
               </div>
             </div>
             <div className="goal-item">
@@ -56,7 +56,7 @@ export default function GoalsSection() {
               </span>
               <div className="goal-item__content">
                 <h3>Organizacja spotkań i wystaw</h3>
-                <p>Cras mattis consectetur purus sit amet fermentum.</p>
+                {/* <p>Cras mattis consectetur purus sit amet fermentum.</p> */}
               </div>
             </div>
           </div>

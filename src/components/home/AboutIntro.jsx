@@ -16,10 +16,11 @@ export default function AboutIntro() {
             to nasza wspólna misja.
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla
-            tellus elit, varius non commodo eget, mattis vel eros. In sed ornare
-            nulla.
+            Stawiamy na najwyższe standardy. Nasze hodowle działają w oparciu o
+            jasno określone cele hodowlane, rzetelną wiedzę z zakresu genetyki
+            oraz wzajemne wsparcie i współpracę. Dążymy do tego, aby członkostwo
+            w naszym Klubie było wyraźnym znakiem jakości i zaufania - zarówno
+            dla hodowców, jak i dla miłośników chomików.
           </p>
           <Button to="/o-nas" variant="outline">
             O klubie <ArrowRight size={18} />

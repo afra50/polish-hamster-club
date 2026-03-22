@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Importujemy ikony
+import { Menu, X } from "lucide-react";
 import Button from "./ui/Button";
 import "../styles/components/header.scss";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Funkcja do przełączania menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Funkcja zamykająca menu po kliknięciu w link (ważne dla UX)
   const closeMenu = () => {
     setIsOpen(false);
   };
@@ -22,14 +20,19 @@ export default function Header() {
       <div className="header__container">
         {/* Logo */}
         <Link to="/" className="header__logo" onClick={closeMenu}>
-          <span className="header__logo-icon">🐹</span>
+          {/* ZMIANA: Usunięty span z ikoną, dodany img */}
+          <img
+            src="/logo.png"
+            alt="Logo Polish Hamster Club"
+            className="header__logo-img"
+          />
           <div className="header__logo-text">
             <span>Polish</span>
             <span>Hamster Club</span>
           </div>
         </Link>
 
-        {/* Przycisk Burgera (widoczny tylko na mobile) */}
+        {/* Przycisk Burgera */}
         <button
           className="header__burger"
           onClick={toggleMenu}
@@ -38,10 +41,7 @@ export default function Header() {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Wrapper dla menu i CTA. 
-            Na desktopie to zwykły flex. 
-            Na mobile to wysuwany panel.
-        */}
+        {/* Wrapper dla menu i CTA */}
         <div className={`header__menu-wrapper ${isOpen ? "open" : ""}`}>
           <nav className="header__nav">
             <ul className="header__nav-list">

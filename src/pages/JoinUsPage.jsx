@@ -42,7 +42,13 @@ export default function JoinUsPage() {
               <p>
                 Przeczytaj Statut, aby poznać nasze wartości i zasady etyczne.
               </p>
-              <a href="/pliki/statut.pdf" className="file-link" download>
+              {/* ZMIANA: target="_blank" rel="noopener noreferrer" zamiast download */}
+              <a
+                href="/pliki/statut.pdf"
+                className="file-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Statut Klubu (PDF)
               </a>
             </div>
@@ -51,33 +57,30 @@ export default function JoinUsPage() {
               <div className="step-item__icon">
                 <PenTool size={32} />
               </div>
-              <h3>2. Wypełnij deklarację</h3>
-              <p>Pobierz formularz i wypełnij go czytelnie.</p>
-              <a href="/pliki/deklaracja.pdf" className="file-link" download>
-                Deklaracja członkowska (PDF)
-              </a>
+              <h3>2. Skontaktuj się z nami</h3>
+              <p>
+                Wyślij do nas wiadomość i porozmawiaj z nami o swojej aplikacji.
+              </p>
             </div>
 
             <div className="step-item">
               <div className="step-item__icon">
                 <CreditCard size={32} />
               </div>
-              <h3>3. Opłać składkę</h3>
+              <h3>3. Wypełnij deklarację</h3>
               <p>
-                Dokonaj opłaty składki zgodnie z informacjami w regulaminie.
+                Pobierz formularz i wypełnij go czytelnie. Następnie dokonaj
+                opłaty składki zgodnie z informacjami w regulaminie.
               </p>
-            </div>
-
-            <div className="step-item">
-              <div className="step-item__icon">
-                <Send size={32} />
-              </div>
-              <h3>4. Wyślij zgłoszenie</h3>
-              <p>
-                Prześlij komplet dokumentów na adres:
-                <br />
-                <strong>biuro@klubchomika.pl</strong>
-              </p>
+              {/* ZMIANA: target="_blank" rel="noopener noreferrer" zamiast download */}
+              <a
+                href="/pliki/deklaracja.pdf"
+                className="file-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Deklaracja członkowska (PDF)
+              </a>
             </div>
           </div>
         </div>
@@ -140,42 +143,48 @@ export default function JoinUsPage() {
         </div>
 
         <div className="join-documents__container">
-          <h2>Dokumenty do pobrania</h2>
+          <h2>Dokumenty</h2>
 
           <div className="documents-grid">
-            <a href="/pliki/deklaracja.pdf" download className="document-tile">
+            {/* ZMIANA: target="_blank" rel="noopener noreferrer" zamiast download */}
+            <a
+              href="/pliki/deklaracja.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="document-tile"
+            >
               <div className="document-tile__left">
                 <FileText size={28} />
                 <span>Deklaracja członkowska</span>
               </div>
-
               <Download className="document-tile__download" size={20} />
             </a>
 
-            <a href="/pliki/regulamin.pdf" download className="document-tile">
+            {/* ZMIANA: target="_blank" rel="noopener noreferrer" zamiast download */}
+            <a
+              href="/pliki/regulamin.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="document-tile"
+            >
               <div className="document-tile__left">
                 <FileText size={28} />
                 <span>Regulamin hodowli</span>
               </div>
-
               <Download className="document-tile__download" size={20} />
             </a>
 
-            <a href="/pliki/karta-miotu.pdf" download className="document-tile">
-              <div className="document-tile__left">
-                <FileText size={28} />
-                <span>Karta miotu</span>
-              </div>
-
-              <Download className="document-tile__download" size={20} />
-            </a>
-
-            <a href="/pliki/przydomek.pdf" download className="document-tile">
+            {/* ZMIANA: target="_blank" rel="noopener noreferrer" zamiast download */}
+            <a
+              href="/pliki/przydomek.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="document-tile"
+            >
               <div className="document-tile__left">
                 <FileText size={28} />
                 <span>Wniosek o przydomek</span>
               </div>
-
               <Download className="document-tile__download" size={20} />
             </a>
           </div>
