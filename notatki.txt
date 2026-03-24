@@ -1,5 +1,5 @@
 -rozdzielic dolacz i wydarzenia na komponenty
--szczególy wystaw pod nazwa, usunac odnosnik.
+- wydarzenia - dodac slider kliku zdjec?
 -status i inne papiery
 - zdjecia marty zmienic na lepsza jakosc a nie z messengera
 - zmienic logo na poprawna wersje, poprawic og image
