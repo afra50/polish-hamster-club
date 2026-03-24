@@ -1,41 +1,28 @@
 import React from "react";
 import { Calendar, MapPin } from "lucide-react";
-// Dostosuj ścieżki importów do swojej struktury folderów
-import Button from "../components/ui/Button";
+// Usunąłem import Button, bo już go tu nie używamy
 import WaveAsymmetricDip from "../components/ui/WaveAsymmetricDip";
 import "../styles/pages/eventsPage.scss";
 
-import heroBreeders from "../assets/hero-breeders.jpg";
-import aboutBreeder from "../assets/about-breeder.webp";
-import heroHamster from "../assets/hero-hamster.jpg";
-import aboutMission from "../assets/about-mission.jpg";
+import pokaz1 from "../assets/wystawa_22032026.jpg";
 
-// --- PRZYKŁADOWE DANE (MOCK DATA) ---
+// --- DANE WYDARZEŃ ---
 const eventsData = {
-  upcoming: [
+  upcoming: [], // Puste, więc wyświetli się komunikat o braku nadchodzących
+  past: [
     {
       id: 1,
-      title: "Dolnośląskie Targi Zoologiczne ",
+      title: "Dolnośląskie Targi Zoologiczne",
       date: "22.03.2026",
       location: "Tarczyński Arena Wrocław",
-      image: heroBreeders,
+      image: pokaz1,
       type: "Pokaz",
-      link: "/wydarzenia/wystawa-warszawa",
+      // ZMIANA: Dodane pole description
+      description:
+        "Pokaz rodowodowych chomików syryjskich i dżungarskich oraz mini wystawa edukacyjna.",
     },
   ],
-  past: [
-    // {
-    //   id: 3,
-    //   title: "Spotkanie integracyjne hodowców",
-    //   date: "02.06.2024",
-    //   location: "Katowice",
-    //   image: heroHamster,
-    //   type: "Spotkanie",
-    //   link: "/archiwum/spotkanie-slask",
-    // },
-  ],
 };
-// ------------------------------------
 
 export default function EventsPage() {
   return (
@@ -54,21 +41,17 @@ export default function EventsPage() {
 
       {/* === 2. NADCHODZĄCE WYDARZENIA (Wstęga) === */}
       <section className="events-upcoming">
-        {/* Fala GÓRNA (Biała na kolorowym tle) */}
         <div className="events-upcoming__wave-top">
           <WaveAsymmetricDip className="ui-wave--white" />
         </div>
 
         <div className="events-upcoming__container">
-          {/* Karty renderowane z danych */}
           {eventsData.upcoming.length > 0 ? (
             <div className="events-grid">
               {eventsData.upcoming.map((event) => (
-                // Karta w wersji podstawowej (wyróżnionej)
                 <article key={event.id} className="event-card">
                   <div className="event-card__image-wrapper">
                     <img src={event.image} alt={event.title} />
-                    {/* Tag typu wydarzenia (np. Wystawa) */}
                     <span className="event-card__tag">{event.type}</span>
                   </div>
                   <div className="event-card__content">
@@ -81,16 +64,10 @@ export default function EventsPage() {
                       </span>
                     </div>
                     <h3>{event.title}</h3>
-                    <div className="event-card__actions">
-                      {/* Przycisk pełny (primary) dla nadchodzących */}
-                      <Button
-                        to={event.link}
-                        variant="primary"
-                        className="full-width"
-                      >
-                        Zobacz szczegóły
-                      </Button>
-                    </div>
+                    {/* ZMIANA: Dodany opis zamiast przycisku */}
+                    <p className="event-card__description">
+                      {event.description}
+                    </p>
                   </div>
                 </article>
               ))}
@@ -107,7 +84,6 @@ export default function EventsPage() {
           )}
         </div>
 
-        {/* Fala DOLNA (Biała na kolorowym tle) */}
         <div className="events-upcoming__wave-bottom">
           <WaveAsymmetricDip className="ui-wave--white" />
         </div>
@@ -118,15 +94,12 @@ export default function EventsPage() {
         <div className="events-archive__container">
           <h2 className="section-title">Archiwum wydarzeń</h2>
 
-          {/* Grid zagęszczony dla archiwum */}
           {eventsData.past.length > 0 ? (
             <div className="events-grid events-grid--compact">
               {eventsData.past.map((event) => (
-                // Karta z modyfikatorem --past (wyszarzona)
                 <article key={event.id} className="event-card event-card--past">
                   <div className="event-card__image-wrapper">
                     <img src={event.image} alt={event.title} />
-                    {/* Nakładka "Zakończone" zamiast taga */}
                     <div className="event-card__overlay">
                       <span>Zakończone</span>
                     </div>
@@ -141,16 +114,10 @@ export default function EventsPage() {
                       </span>
                     </div>
                     <h3>{event.title}</h3>
-                    <div className="event-card__actions">
-                      {/* Przycisk obrysowy (outline) dla archiwum */}
-                      <Button
-                        to={event.link}
-                        variant="outline"
-                        className="full-width"
-                      >
-                        Zobacz szczegóły
-                      </Button>
-                    </div>
+                    {/* ZMIANA: Dodany opis zamiast przycisku */}
+                    <p className="event-card__description">
+                      {event.description}
+                    </p>
                   </div>
                 </article>
               ))}
